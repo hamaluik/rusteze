@@ -1,0 +1,12 @@
+-cp src
+-lib glm
+
+rusteze.Option
+rusteze.Result
+rusteze.iter.Iter
+
+-D doc-gen
+-xml docs/dox.xml
+
+--next
+-cmd haxelib run dox -i docs -o docs --title "rusteze" --toplevel-package "rusteze" -D version "0.1.0" -D source-path "https://github.com/hamaluik/rusteze/tree/master/src" -D description "Utilities bringing some concepts from Rust into Haxe for easier context switching"

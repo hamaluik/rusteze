@@ -1,0 +1,12 @@
+{
+  "name": "rusteze",
+  "url" : "https://github.com/hamaluik/rusteze",
+  "license": "Apache",
+  "classPath": "src",
+  "tags": ["cross", "utility"],
+  "description": "Utilities bringing some concepts from Rust into Haxe for easier context switching",
+  "version": "0.1.0",
+  "releasenote": "Initial release",
+  "contributors": ["hamaluik"],
+  "dependencies": {}
+}
