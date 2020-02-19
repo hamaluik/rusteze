@@ -1257,6 +1257,152 @@
 	@see https://haxe.org/manual/std-Option.html</haxe_doc>
 		<meta><m n=":directlyUsed"/></meta>
 	</enum>
+	<class path="rusteze.Macros" params="" file="src/rusteze/Macros.hx">
+		<assert public="1" set="method" static="1">
+			<f a="expr:extra">
+				<x path="Bool"/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Ensure that a boolean expression is `true` at runtime. Optionally provide a
+     second parameter to use for a custom exception message
+
+     ```haxe
+     assert(true);
+
+     function some_computation(): Bool { return true; }
+     assert(some_computation());
+
+     // assert with a custom message
+     final x: Bool = true;
+     assert(x, "x wasn't true!");
+
+     final a = 3; final b = 27;
+     assert(a + b == 30, 'a = $a, b = $b');
+     ```
+
+     @throws String if the provided expression cannot be evaluated to true at runtime
+     @see https://doc.rust-lang.org/1.8.0/std/macro.assert!.html</haxe_doc>
+		</assert>
+		<debug_assert public="1" set="method" static="1">
+			<f a="expr:extra">
+				<x path="Bool"/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Ensure that a boolean expression is `true` at runtime. Optionally provide a
+     second parameter to use for a custom exception message
+
+     Unlike `assert`, `debug_assert` statements are only enabled if the Haxe compiler
+     is invoked with the `-debug` flag. This makes `debug_assert` useful for checks
+     that are too expensive to be present in a release build but may be helpful
+     during development.
+
+     ```haxe
+     assert(true);
+
+     function some_computation(): Bool { return true; }
+     assert(some_computation());
+
+     // assert with a custom message
+     final x: Bool = true;
+     assert(x, "x wasn't true!");
+
+     final a = 3; final b = 27;
+     assert(a + b == 30, 'a = $a, b = $b');
+     ```
+
+     @throws String if the provided expression cannot be evaluated to true at runtime
+     @see https://doc.rust-lang.org/1.8.0/std/macro.debug_assert!.html</haxe_doc>
+		</debug_assert>
+		<assert_eq public="1" set="method" static="1">
+			<f a="left:right">
+				<d/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Asserts that two expressions are equal to each other.
+
+     ```haxe
+     final a: Int = 3;
+     final b: Int = 1 + 2;
+     assert_eq(a, b);
+     ```
+
+     @throws String the values of the expressions if the two are not equal to each other
+     @see https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</haxe_doc>
+		</assert_eq>
+		<debug_assert_eq public="1" set="method" static="1">
+			<f a="left:right">
+				<d/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Asserts that two expressions are equal to each other.
+
+     Unlike `assert_eq`, `debug_assert_eq` statements are only enabled if the Haxe compiler
+     is invoked with the `-debug` flag. This makes `debug_assert_eq` useful for checks
+     that are too expensive to be present in a release build but may be helpful
+     during development.
+
+     ```haxe
+     final a: Int = 3;
+     final b: Int = 1 + 2;
+     debug_assert_eq(a, b);
+     ```
+
+     @throws String the values of the expressions if the two are not equal to each other
+     @see https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</haxe_doc>
+		</debug_assert_eq>
+		<env public="1" set="method" static="1">
+			<f a="name">
+				<d/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Inspect an environment variable at compile time.
+
+     This macro will expand to the value of the named environment variable at compile
+     time, yielding an expression of type `String`.
+
+     If the environment variable is not defined, then a compilation error will be
+     emitted. To not emit a compile error, use the `option_env` macro instead.
+
+     ```haxe
+     final path: String = env("PATH");
+     Sys.println("the $PATH variable at the time of compiling was: " + path);
+     ```</haxe_doc>
+		</env>
+		<option_env public="1" set="method" static="1">
+			<f a="name">
+				<d/>
+				<e path="rusteze.Option"><c path="String"/></e>
+			</f>
+			<haxe_doc><![CDATA[Optionally inspect an environment variable at compile time.
+
+     If the named environment variable is present at compile time, this will expand
+     into an expression of type `Option<String>` with a value of `Some`. If the
+     environment variable is not present, then this will expand to `None`.
+
+     A compile time error is never emitted when using this macro regardless of
+     whether the environment variable is present or not.
+
+     ```haxe
+     final key: Option<String> = option_env("SECRET_KEY");
+     Sys.println("the secret key might be: " + Std.string(key));
+     ```]]></haxe_doc>
+		</option_env>
+		<include_str public="1" set="method" static="1">
+			<f a="path">
+				<d/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Includes a utf8-encoded file as a string.
+
+     This macro will yield an expression of type `String` which is the contents
+     of the filename specified. The file is located relative to the current file.</haxe_doc>
+		</include_str>
+		<haxe_doc>Haxe re-implementations of various Rust macros</haxe_doc>
+	</class>
 	<enum path="rusteze.Option" params="T" file="src/rusteze/Option.hx">
 		<Some a="v"><c path="rusteze.Option.T"/></Some>
 		<None/>
@@ -1581,8 +1727,328 @@
 		</meta>
 	</enum>
 	<class path="rusteze.ResultTools" params="" file="src/rusteze/ResultTools.hx">
-		<unwrap public="1" params="V:E" get="inline" set="null" line="22" static="1">
-			<f a="x">
+		<is_ok public="1" params="T:E" get="inline" set="null" line="35" static="1">
+			<f a="self">
+				<e path="rusteze.Result">
+					<c path="is_ok.T"/>
+					<c path="is_ok.E"/>
+				</e>
+				<x path="Bool"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Returns `true` if the result is `Ok`
+
+     ```haxe
+     final x: Result<Int, String> = Ok(-3);
+     assert_eq(x.is_ok(), true);
+
+     final x: Result<Int, String> = Err("Some error message");
+     assert_eq(x.is_ok(), false);
+     ```
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok]]></haxe_doc>
+		</is_ok>
+		<is_err public="1" params="T:E" get="inline" set="null" line="48" static="1">
+			<f a="self">
+				<e path="rusteze.Result">
+					<c path="is_err.T"/>
+					<c path="is_err.E"/>
+				</e>
+				<x path="Bool"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Returns `true` if the result is `Err`
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_err</haxe_doc>
+		</is_err>
+		<contains public="1" params="T:E" get="inline" set="null" line="61" static="1">
+			<f a="self:x">
+				<e path="rusteze.Result">
+					<c path="contains.T"/>
+					<c path="contains.E"/>
+				</e>
+				<c path="contains.T"/>
+				<x path="Bool"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Returns `true` if the result is an `Ok` value containing the given value
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.contains</haxe_doc>
+		</contains>
+		<contains_err public="1" params="T:E" get="inline" set="null" line="74" static="1">
+			<f a="self:e">
+				<e path="rusteze.Result">
+					<c path="contains_err.T"/>
+					<c path="contains_err.E"/>
+				</e>
+				<c path="contains_err.E"/>
+				<x path="Bool"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Returns `true` if the result is an `Ok` value containing the given value
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.contains_err</haxe_doc>
+		</contains_err>
+		<ok public="1" params="T:E" get="inline" set="null" line="90" static="1">
+			<f a="self">
+				<e path="rusteze.Result">
+					<c path="ok.T"/>
+					<c path="ok.E"/>
+				</e>
+				<e path="rusteze.Option"><c path="ok.T"/></e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Converts from `Result<T, E>` to `Option<T>`.
+
+     Converts `self` into an `Option<T>`, consuming `self`, and discarding the
+     error, if any.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.ok]]></haxe_doc>
+		</ok>
+		<err public="1" params="T:E" get="inline" set="null" line="106" static="1">
+			<f a="self">
+				<e path="rusteze.Result">
+					<c path="err.T"/>
+					<c path="err.E"/>
+				</e>
+				<e path="rusteze.Option"><c path="err.E"/></e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Converts from `Result<T, E>` to `Option<E>`.
+
+     Converts `self` into an `Option<E>`, consuming `self`, and discarding the
+     success value, if any.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.ok]]></haxe_doc>
+		</err>
+		<map public="1" params="T:E:U" get="inline" set="null" line="122" static="1">
+			<f a="self:op">
+				<e path="rusteze.Result">
+					<c path="map.T"/>
+					<c path="map.E"/>
+				</e>
+				<f a="v">
+					<c path="map.T"/>
+					<c path="map.U"/>
+				</f>
+				<e path="rusteze.Result">
+					<c path="map.U"/>
+					<c path="map.E"/>
+				</e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Maps a `Result<T, E>` to `Result<U, E>` by applying a function to a contained
+     `Ok` value, leaving an `Err` value untouched.
+
+     The function can be used to compose the results of two functions.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map]]></haxe_doc>
+		</map>
+		<map_or public="1" params="T:E:U" get="inline" set="null" line="136" static="1">
+			<f a="self:def:f">
+				<e path="rusteze.Result">
+					<c path="map_or.T"/>
+					<c path="map_or.E"/>
+				</e>
+				<c path="map_or.U"/>
+				<f a="v">
+					<c path="map_or.T"/>
+					<c path="map_or.U"/>
+				</f>
+				<c path="map_or.U"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Apples a function to the contained value (if any), or returns the provided
+     default (if not).
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or</haxe_doc>
+		</map_or>
+		<map_or_else public="1" params="T:E:U" get="inline" set="null" line="153" static="1">
+			<f a="self:def:f">
+				<e path="rusteze.Result">
+					<c path="map_or_else.T"/>
+					<c path="map_or_else.E"/>
+				</e>
+				<f a="e">
+					<c path="map_or_else.E"/>
+					<c path="map_or_else.U"/>
+				</f>
+				<f a="v">
+					<c path="map_or_else.T"/>
+					<c path="map_or_else.U"/>
+				</f>
+				<c path="map_or_else.U"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Maps a `Result<T, E>` to `U` by applying a function to a contained `Ok` value,
+     or a fallback function to a contained `Err` value.
+
+     This function can be used to unpack a successful result while handling an
+     error.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or_else]]></haxe_doc>
+		</map_or_else>
+		<map_err public="1" params="T:E:F" get="inline" set="null" line="170" static="1">
+			<f a="self:op">
+				<e path="rusteze.Result">
+					<c path="map_err.T"/>
+					<c path="map_err.E"/>
+				</e>
+				<f a="e">
+					<c path="map_err.E"/>
+					<c path="map_err.F"/>
+				</f>
+				<e path="rusteze.Result">
+					<c path="map_err.T"/>
+					<c path="map_err.F"/>
+				</e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Maps a `Result<T, E>` to `Result<T, F>` by applying a function to a contained
+     `Err` value, leaving an `Ok` value untouched.
+
+     This function can be used to pass through a successful result while handling
+     an error.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err]]></haxe_doc>
+		</map_err>
+		<and public="1" params="T:E:U" get="inline" set="null" line="183" static="1">
+			<f a="self:res">
+				<e path="rusteze.Result">
+					<c path="and.T"/>
+					<c path="and.E"/>
+				</e>
+				<e path="rusteze.Result">
+					<c path="and.U"/>
+					<c path="and.E"/>
+				</e>
+				<e path="rusteze.Result">
+					<c path="and.U"/>
+					<c path="and.E"/>
+				</e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Returns `res` if the result is `Ok`, otherwise returns the `Err` value of `self`.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.and</haxe_doc>
+		</and>
+		<and_then public="1" params="T:E:U" get="inline" set="null" line="198" static="1">
+			<f a="self:op">
+				<e path="rusteze.Result">
+					<c path="and_then.T"/>
+					<c path="and_then.E"/>
+				</e>
+				<f a="v">
+					<c path="and_then.T"/>
+					<e path="rusteze.Result">
+						<c path="and_then.U"/>
+						<c path="and_then.E"/>
+					</e>
+				</f>
+				<e path="rusteze.Result">
+					<c path="and_then.U"/>
+					<c path="and_then.E"/>
+				</e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Calls `op` if the result is `Ok`, otherwise returns the `Err` value of `self`.
+
+     This function can be used for control flow based on `Result` values.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.and_then</haxe_doc>
+		</and_then>
+		<or public="1" params="T:E:F" get="inline" set="null" line="214" static="1">
+			<f a="self:res">
+				<e path="rusteze.Result">
+					<c path="or.T"/>
+					<c path="or.E"/>
+				</e>
+				<e path="rusteze.Result">
+					<c path="or.T"/>
+					<c path="or.F"/>
+				</e>
+				<e path="rusteze.Result">
+					<c path="or.T"/>
+					<c path="or.F"/>
+				</e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Returns `res` if the result is `Err`, otherwise returns the `Ok` value of `self`.
+
+     Arguments passed to `or` are eagerly evaluated; if you are passing the result
+     of a function call, it is recommended to use `or_else`, which is lazily evaluated.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.or</haxe_doc>
+		</or>
+		<or_else public="1" params="T:E:F" get="inline" set="null" line="229" static="1">
+			<f a="self:op">
+				<e path="rusteze.Result">
+					<c path="or_else.T"/>
+					<c path="or_else.E"/>
+				</e>
+				<f a="e">
+					<c path="or_else.E"/>
+					<e path="rusteze.Result">
+						<c path="or_else.T"/>
+						<c path="or_else.F"/>
+					</e>
+				</f>
+				<e path="rusteze.Result">
+					<c path="or_else.T"/>
+					<c path="or_else.F"/>
+				</e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Calls `op` if the result is `Err`, otherwise returns the `Ok` value of `self`.
+
+     This function can be used for control flow based on result values.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.or_else</haxe_doc>
+		</or_else>
+		<unwrap_or public="1" params="T:E" get="inline" set="null" line="246" static="1">
+			<f a="self:optb">
+				<e path="rusteze.Result">
+					<c path="unwrap_or.T"/>
+					<c path="unwrap_or.E"/>
+				</e>
+				<c path="unwrap_or.T"/>
+				<c path="unwrap_or.T"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Unwraps a result, yielding the content of an `Ok`. Else, it returns `optb`.
+
+     Arugments passed to `unwrap_or` are eagerly evaluated; if you are passing the
+     result of a function call, it is recommended to use `unwrap_or_else`, which
+     is lazily evaluated.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or</haxe_doc>
+		</unwrap_or>
+		<unwrap_or_else public="1" params="T:E" get="inline" set="null" line="266" static="1">
+			<f a="self:op">
+				<e path="rusteze.Result">
+					<c path="unwrap_or_else.T"/>
+					<c path="unwrap_or_else.E"/>
+				</e>
+				<f a="e">
+					<c path="unwrap_or_else.E"/>
+					<c path="unwrap_or_else.T"/>
+				</f>
+				<c path="unwrap_or_else.T"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc>Unwraps a result, yielding the content of an `Ok`. If the value is an `Err`
+     then it calls `op` with its value.
+
+     ```haxe
+     function count(x: String): Int { return x.length }
+     assert_eq(Ok(2).unwrap_or_else(count), 2);
+     assert_eq(Err("foo").unwrap_or_else(count), 3);
+     ```
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else</haxe_doc>
+		</unwrap_or_else>
+		<unwrap public="1" params="V:E" get="inline" set="null" line="290" static="1">
+			<f a="self">
 				<e path="rusteze.Result">
 					<c path="unwrap.V"/>
 					<c path="unwrap.E"/>
@@ -1590,9 +2056,23 @@
 				<c path="unwrap.V"/>
 			</f>
 			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Unwraps a result, yielding the content of an `Ok`.
+
+     ```haxe
+     final x: Result<Int, String> = Ok(2);
+     assert_eq(x.unwrap(), 2);
+     ```
+
+     ```haxe
+     final x: Result<Int, String> = Err("emergency failure");
+     x.unwrap(); // throws `emergency failure`
+     ```
+
+     @throws String if the value is an `Err`, with a panic message provided by the `Err`'s value.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap]]></haxe_doc>
 		</unwrap>
-		<expect public="1" params="V:E" get="inline" set="null" line="30" static="1">
-			<f a="x:msg">
+		<expect public="1" params="V:E" get="inline" set="null" line="309" static="1">
+			<f a="self:msg">
 				<e path="rusteze.Result">
 					<c path="expect.V"/>
 					<c path="expect.E"/>
@@ -1601,7 +2081,85 @@
 				<c path="expect.V"/>
 			</f>
 			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Unwraps a result, yielding the content of an `Ok`.
+
+     ```haxe
+     final x: Result<Int, String> = Err("emergency failure");
+     x.expect("Testing expect"); // panics with `Testing expect: emergency failure`
+     ```
+
+     @throws String if the value is an `Err`, with a panic message including the passed message, and the content of the `Err`.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.expect]]></haxe_doc>
 		</expect>
+		<unwrap_err public="1" params="T:E" get="inline" set="null" line="333" static="1">
+			<f a="self">
+				<e path="rusteze.Result">
+					<c path="unwrap_err.T"/>
+					<c path="unwrap_err.E"/>
+				</e>
+				<c path="unwrap_err.E"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Unwraps a result, yielding the content of an `Err`.
+
+     ```haxe
+     final x: Result<Int, String> = Ok(2);
+     x.unwrap_err(); // panics with `2`
+     ```
+
+     ```haxe
+     final x: Result<Int, String> = Err("emergency failure");
+     assert_eq(x.unwrap_err(), "emergency failure");
+     ```
+
+     @throws String if the value is an `Ok`, with a panic message provided by the `Ok`'s value.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_err]]></haxe_doc>
+		</unwrap_err>
+		<expect_err public="1" params="V:E" get="inline" set="null" line="352" static="1">
+			<f a="self:msg">
+				<e path="rusteze.Result">
+					<c path="expect_err.V"/>
+					<c path="expect_err.E"/>
+				</e>
+				<c path="String"/>
+				<c path="expect_err.E"/>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Unwraps a result, yielding the content of an `Err`.
+
+     ```haxe
+     final x: Result<Int, String> = Ok(10);
+     x.expect("Testing expect_err"); // panics with `Testing expect_err: 10`
+     ```
+
+     @throws String if the value is an `Err`, with a panic message including the passed message, and the content of the `Err`.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.expect]]></haxe_doc>
+		</expect_err>
+		<transpose public="1" params="T:E" get="inline" set="null" line="374" static="1">
+			<f a="self">
+				<e path="rusteze.Result">
+					<e path="rusteze.Option"><c path="transpose.T"/></e>
+					<c path="transpose.E"/>
+				</e>
+				<e path="rusteze.Option"><e path="rusteze.Result">
+	<c path="transpose.T"/>
+	<c path="transpose.E"/>
+</e></e>
+			</f>
+			<meta><m n=":generic"/></meta>
+			<haxe_doc><![CDATA[Transposes a `Result` of an `Option` into an `Option` of a `Result`.
+
+     `Ok(None)` will be mapped to `None`.
+     `Ok(Some(_))` and `Err(_)` will be mapped to `Some(Ok(_))` and `Some(Err(_))`.
+
+     ```haxe
+     final x: Result<Option<Int>, String> = Ok(Some(5));
+     final y: Option<Result<Int, String>> = Some(Ok(5));
+     assert_eq(x.transpose(), y);
+     ```
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.transpose]]></haxe_doc>
+		</transpose>
 		<meta><m n=":nullSafety"/></meta>
 	</class>
 	<class path="rusteze.iter.IterBase" params="T" file="src/rusteze/iter/IterBase.hx">

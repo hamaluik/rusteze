@@ -4,6 +4,7 @@
 rusteze.Option
 rusteze.Result
 rusteze.iter.Iter
+rusteze.Macros
 
 -D doc-gen
 -xml docs/dox.xml

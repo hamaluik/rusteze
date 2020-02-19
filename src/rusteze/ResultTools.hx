@@ -21,6 +21,14 @@ class ResultTools {
     /**
      Returns `true` if the result is `Ok`
 
+     ```haxe
+     final x: Result<Int, String> = Ok(-3);
+     assert_eq(x.is_ok(), true);
+
+     final x: Result<Int, String> = Err("Some error message");
+     assert_eq(x.is_ok(), false);
+     ```
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok
     **/
     @:generic

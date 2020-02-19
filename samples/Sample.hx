@@ -33,5 +33,18 @@ class Sample {
         // iterators have some helper functionality
         var iter = arr.iter();
         Sys.println('there are ${iter.count()} items');
+
+        // runtime assertions
+        final theAnswer: Int = 5;
+        try { debug_assert_eq(theAnswer, 2); }
+        catch(s: String) { Sys.println(s); }
+        try { assert(theAnswer == 42, "the life, the universe, everything"); }
+        catch(s: String) { Sys.println(s); }
+
+        // utility macros
+        final compileTimePathVar: String = env("PATH");
+        Sys.println("PATH at compile-time was: " + compileTimePathVar);
+        final importContents: String = include_str("import.hx");
+        Sys.println("the contents of `import.hx` are:\n" + importContents);
     }
 }

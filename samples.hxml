@@ -2,16 +2,17 @@
 -cp samples
 -dce full
 -main Sample
+-debug
 --each
 
 -lib hxnodejs
 --js bin/sample.js
 --cmd node bin/sample.js
 
---next
---hl bin/sample.hl
---cmd hl bin/sample.hl
+#--next
+#--hl bin/sample.hl
+#--cmd hl bin/sample.hl
 
---next
---cpp bin/sample
---cmd bin/sample/Sample
+#--next
+#--cpp bin/sample
+#--cmd bin/sample/Sample
