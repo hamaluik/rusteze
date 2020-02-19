@@ -20,7 +20,7 @@ package rusteze;
 class ResultTools {
     /**
      Returns `true` if the result is `Ok`
-     
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok
     **/
     @:generic
@@ -33,7 +33,7 @@ class ResultTools {
 
     /**
      Returns `true` if the result is `Err`
-     
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_err
     **/
     @:generic
@@ -75,7 +75,7 @@ class ResultTools {
 
      Converts `self` into an `Option<T>`, consuming `self`, and discarding the
      error, if any.
-     
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.ok
     **/
     @:generic
@@ -91,7 +91,7 @@ class ResultTools {
 
      Converts `self` into an `Option<E>`, consuming `self`, and discarding the
      success value, if any.
-     
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.ok
     **/
     @:generic
@@ -107,7 +107,7 @@ class ResultTools {
      `Ok` value, leaving an `Err` value untouched.
 
      The function can be used to compose the results of two functions.
-     
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map
     **/
     @:generic
@@ -121,7 +121,7 @@ class ResultTools {
     /**
      Apples a function to the contained value (if any), or returns the provided
      default (if not).
-     
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or
     **/
     @:generic
@@ -155,7 +155,7 @@ class ResultTools {
 
      This function can be used to pass through a successful result while handling
      an error.
-     
+
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err
     **/
     @:generic
@@ -166,19 +166,210 @@ class ResultTools {
         };
     }
 
+    /**
+     Returns `res` if the result is `Ok`, otherwise returns the `Err` value of `self`.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.and
+     **/
     @:generic
-    public inline static function unwrap<V, E>(x: Result<V, E>): V {
-        return switch(x) {
-            case Ok(v): v;
-            case Err(e): throw 'unwrapped result is err: ${Std.string(e)}';
+    public inline static function and<T, E, U>(self: Result<T, E>, res: Result<U, E>): Result<U, E> {
+        return switch(self) {
+            case Ok(_): res;
+            case Err(e): Err(e);
         };
     }
 
+    /**
+     Calls `op` if the result is `Ok`, otherwise returns the `Err` value of `self`.
+
+     This function can be used for control flow based on `Result` values.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.and_then
+     **/
     @:generic
-    public inline static function expect<V, E>(x: Result<V, E>, msg: String): V {
-        return switch(x) {
+    public inline static function and_then<T, E, U>(self: Result<T, E>, op: (v: T) -> Result<U, E>): Result<U, E> {
+        return switch(self) {
+            case Ok(v): op(v);
+            case Err(e): Err(e);
+        };
+    }
+
+    /**
+     Returns `res` if the result is `Err`, otherwise returns the `Ok` value of `self`.
+
+     Arguments passed to `or` are eagerly evaluated; if you are passing the result
+     of a function call, it is recommended to use `or_else`, which is lazily evaluated.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.or
+     **/
+    @:generic
+    public inline static function or<T, E, F>(self: Result<T, E>, res: Result<T, F>): Result<T, F> {
+        return switch(self) {
+            case Err(_): res;
+            case Ok(v): Ok(v);
+        };
+    }
+
+    /**
+     Calls `op` if the result is `Err`, otherwise returns the `Ok` value of `self`.
+
+     This function can be used for control flow based on result values.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.or_else
+     **/
+    @:generic
+    public inline static function or_else<T, E, F>(self: Result<T, E>, op: (e: E) -> Result<T, F>): Result<T, F> {
+        return switch(self) {
+            case Err(e): op(e);
+            case Ok(v): Ok(v);
+        };
+    }
+
+    /**
+     Unwraps a result, yielding the content of an `Ok`. Else, it returns `optb`.
+
+     Arugments passed to `unwrap_or` are eagerly evaluated; if you are passing the
+     result of a function call, it is recommended to use `unwrap_or_else`, which
+     is lazily evaluated.
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or
+     **/
+    @:generic
+    public inline static function unwrap_or<T, E>(self: Result<T, E>, optb: T): T {
+        return switch(self) {
             case Ok(v): v;
-            case Err(_): throw msg;
+            case Err(_): optb;
+        };
+    }
+
+    /**
+     Unwraps a result, yielding the content of an `Ok`. If the value is an `Err`
+     then it calls `op` with its value.
+
+     ```haxe
+     function count(x: String): Int { return x.length }
+     assert_eq(Ok(2).unwrap_or_else(count), 2);
+     assert_eq(Err("foo").unwrap_or_else(count), 3);
+     ```
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else
+     **/
+    @:generic
+    public inline static function unwrap_or_else<T, E>(self: Result<T, E>, op: (e: E) -> T): T {
+        return switch(self) {
+            case Ok(v): v;
+            case Err(e): op(e);
+        };
+    }
+
+    /**
+     Unwraps a result, yielding the content of an `Ok`.
+
+     ```haxe
+     final x: Result<Int, String> = Ok(2);
+     assert_eq(x.unwrap(), 2);
+     ```
+
+     ```haxe
+     final x: Result<Int, String> = Err("emergency failure");
+     x.unwrap(); // throws `emergency failure`
+     ```
+
+     @throws String if the value is an `Err`, with a panic message provided by the `Err`'s value.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap
+     **/
+    @:generic
+    public inline static function unwrap<V, E>(self: Result<V, E>): V {
+        return switch(self) {
+            case Ok(v): v;
+            case Err(e): throw Std.string(e);
+        };
+    }
+
+    /**
+     Unwraps a result, yielding the content of an `Ok`.
+
+     ```haxe
+     final x: Result<Int, String> = Err("emergency failure");
+     x.expect("Testing expect"); // panics with `Testing expect: emergency failure`
+     ```
+
+     @throws String if the value is an `Err`, with a panic message including the passed message, and the content of the `Err`.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.expect
+     **/
+    @:generic
+    public inline static function expect<V, E>(self: Result<V, E>, msg: String): V {
+        return switch(self) {
+            case Ok(v): v;
+            case Err(e): throw msg + ": " + Std.string(e);
+        };
+    }
+
+    /**
+     Unwraps a result, yielding the content of an `Err`.
+
+     ```haxe
+     final x: Result<Int, String> = Ok(2);
+     x.unwrap_err(); // panics with `2`
+     ```
+
+     ```haxe
+     final x: Result<Int, String> = Err("emergency failure");
+     assert_eq(x.unwrap_err(), "emergency failure");
+     ```
+
+     @throws String if the value is an `Ok`, with a panic message provided by the `Ok`'s value.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_err
+     **/
+    @:generic
+    public inline static function unwrap_err<T, E>(self: Result<T, E>): E {
+        return switch(self) {
+            case Ok(v): throw Std.string(v);
+            case Err(e): e;
+        };
+    }
+
+    /**
+     Unwraps a result, yielding the content of an `Err`.
+
+     ```haxe
+     final x: Result<Int, String> = Ok(10);
+     x.expect("Testing expect_err"); // panics with `Testing expect_err: 10`
+     ```
+
+     @throws String if the value is an `Err`, with a panic message including the passed message, and the content of the `Err`.
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.expect
+     **/
+    @:generic
+    public inline static function expect_err<V, E>(self: Result<V, E>, msg: String): E {
+        return switch(self) {
+            case Ok(v): throw msg + ": " + Std.string(v);
+            case Err(e): e;
+        };
+    }
+
+    /**
+     Transposes a `Result` of an `Option` into an `Option` of a `Result`.
+
+     `Ok(None)` will be mapped to `None`.
+     `Ok(Some(_))` and `Err(_)` will be mapped to `Some(Ok(_))` and `Some(Err(_))`.
+
+     ```haxe
+     final x: Result<Option<Int>, String> = Ok(Some(5));
+     final y: Option<Result<Int, String>> = Some(Ok(5));
+     assert_eq(x.transpose(), y);
+     ```
+
+     @see https://doc.rust-lang.org/std/result/enum.Result.html#method.transpose
+     **/
+    @:generic
+    public inline static function transpose<T, E>(self: Result<Option<T>, E>): Option<Result<T, E>> {
+        return switch(self) {
+            case Ok(o): switch(o) {
+                case Some(v): Some(Ok(v));
+                case None: None;
+            }
+            case Err(e): Some(Err(e));
         };
     }
 }
