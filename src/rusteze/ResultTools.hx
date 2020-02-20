@@ -16,6 +16,11 @@
 
 package rusteze;
 
+
+/**
+ ResultTools are automatic static extensions on the `Result` enum providing numerous
+ convenience functions such as `unwrap`, `is_ok`, etc
+**/
 @:nullSafety
 class ResultTools {
     /**
@@ -23,10 +28,10 @@ class ResultTools {
 
      ```haxe
      final x: Result<Int, String> = Ok(-3);
-     assert_eq(x.is_ok(), true);
+     assert_eq_(x.is_ok(), true);
 
      final x: Result<Int, String> = Err("Some error message");
-     assert_eq(x.is_ok(), false);
+     assert_eq_(x.is_ok(), false);
      ```
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok
@@ -256,8 +261,8 @@ class ResultTools {
 
      ```haxe
      function count(x: String): Int { return x.length }
-     assert_eq(Ok(2).unwrap_or_else(count), 2);
-     assert_eq(Err("foo").unwrap_or_else(count), 3);
+     assert_eq_(Ok(2).unwrap_or_else(count), 2);
+     assert_eq_(Err("foo").unwrap_or_else(count), 3);
      ```
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else
@@ -275,7 +280,7 @@ class ResultTools {
 
      ```haxe
      final x: Result<Int, String> = Ok(2);
-     assert_eq(x.unwrap(), 2);
+     assert_eq_(x.unwrap(), 2);
      ```
 
      ```haxe
@@ -323,7 +328,7 @@ class ResultTools {
 
      ```haxe
      final x: Result<Int, String> = Err("emergency failure");
-     assert_eq(x.unwrap_err(), "emergency failure");
+     assert_eq_(x.unwrap_err(), "emergency failure");
      ```
 
      @throws String if the value is an `Ok`, with a panic message provided by the `Ok`'s value.
@@ -365,7 +370,7 @@ class ResultTools {
      ```haxe
      final x: Result<Option<Int>, String> = Ok(Some(5));
      final y: Option<Result<Int, String>> = Some(Ok(5));
-     assert_eq(x.transpose(), y);
+     assert_eq_(x.transpose(), y);
      ```
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.transpose

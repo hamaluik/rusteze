@@ -6,62 +6,131 @@
 	display: inline-block;
 	float: none;
 	text-shadow: 0 0 0 transparent;
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#000000" href="../">rusteze</a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Filter" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/hamaluik/rusteze/tree/master/src/rusteze/Macros.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> Macros</h1><h4><small>package <a href="../index.html">rusteze</a></small></h4>    <hr/></div><div class="body"><div class="doc doc-main"><div class="indent"><p>Haxe re-implementations of various Rust macros</p></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="assert"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#assert"><span class="identifier">assert</span></a> (<span style="white-space:nowrap">expr:<span class="type">Bool</span>,</span> <span style="white-space:nowrap">extra:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Ensure that a boolean expression is <code>true</code> at runtime. Optionally provide a
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#000000" href="../">rusteze</a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Filter" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/hamaluik/rusteze/tree/master/src/rusteze/Macros.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> Macros</h1><h4><small>package <a href="../index.html">rusteze</a></small></h4>    <hr/></div><div class="body"><div class="doc doc-main"><div class="indent"><p>Haxe re-implementations of various Rust macros</p></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="assert_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#assert_"><span class="identifier">assert_</span></a> (<span style="white-space:nowrap">expr:<span class="type">Bool</span>,</span> <span style="white-space:nowrap">extra:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Ensure that a boolean expression is <code>true</code> at runtime. Optionally provide a
 second parameter to use for a custom exception message</p>
-<pre><code class="prettyprint haxe">assert(true);
+<pre><code class="prettyprint haxe">assert_(true);
 
 function some_computation(): Bool { return true; }
-assert(some_computation());
+assert_(some_computation());
 
-// assert with a custom message
+// assert_ with a custom message
 final x: Bool = true;
-assert(x, "x wasn't true!");
+assert_(x, "x wasn't true!");
 
 final a = 3; final b = 27;
-assert(a + b == 30, 'a = $a, b = $b');</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>if the provided expression cannot be evaluated to true at runtime</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.assert!.html">https://doc.rust-lang.org/1.8.0/std/macro.assert!.html</a></p></div></div></div><div class="field "><a name="assert_eq"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#assert_eq"><span class="identifier">assert_eq</span></a> (<span style="white-space:nowrap">left:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">right:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Asserts that two expressions are equal to each other.</p>
+assert_(a + b == 30, 'a = $a, b = $b');</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>if the provided expression cannot be evaluated to true at runtime</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.assert!.html">https://doc.rust-lang.org/1.8.0/std/macro.assert!.html</a></p></div></div></div><div class="field "><a name="assert_eq_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#assert_eq_"><span class="identifier">assert_eq_</span></a> (<span style="white-space:nowrap">left:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">right:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Asserts that two expressions are equal to each other.</p>
 <pre><code class="prettyprint haxe">final a: Int = 3;
 final b: Int = 1 + 2;
-assert_eq(a, b);</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>the values of the expressions if the two are not equal to each other</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html">https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</a></p></div></div></div><div class="field "><a name="concat"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#concat"><span class="identifier">concat</span></a> (<span style="white-space:nowrap">e1:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">rest:<span class="type">Dynamic</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Concatenates literals into a static <code>String</code></p>
+assert_eq_(a, b);</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>the values of the expressions if the two are not equal to each other</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html">https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</a></p></div></div></div><div class="field "><a name="concat_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#concat_"><span class="identifier">concat_</span></a> (<span style="white-space:nowrap">e1:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">rest:<span class="type">Dynamic</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Concatenates literals into a static <code>String</code></p>
 <p>This macro takes any number of comma-separated literals, yielding an expression
 of <code>String</code> which represents all of the literals concatenated left-to-right.</p>
-<p>Integer and floating point literals are stringified in order to be concatenated.</p></div></div><div class="field "><a name="debug_assert"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#debug_assert"><span class="identifier">debug_assert</span></a> (<span style="white-space:nowrap">expr:<span class="type">Bool</span>,</span> <span style="white-space:nowrap">extra:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Ensure that a boolean expression is <code>true</code> at runtime. Optionally provide a
+<p>Integer and floating point literals are stringified in order to be concatenated.</p>
+<pre><code class="prettyprint haxe">final s: String = concat_("test", 10, 'b', true);
+assert_eq_(s, "test10btrue");</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.concat.html">https://doc.rust-lang.org/std/macro.concat.html</a></p></div></div></div><div class="field "><a name="dbg_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#dbg_"><span class="identifier">dbg_</span></a> (<span style="white-space:nowrap">val:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">rest:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>This macro prints the value of each argument to <code>stderr</code> along with the source
+location of the macro invocation as well as the source code of the expression.</p>
+<p>The <code>dbg_</code> macro works exactly the same in release builds. This is useful when
+debugging issues that only occur in release builds or when debugging in release
+mode is significantly faster.</p>
+<p>Note that this macro is intended as debugging tool and therefore you should
+avoid having uses of it in version control for longer periods. Use cases involving
+debug output that should be added to version control are better served by
+proper logging utilities.</p><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.dbg.html">https://doc.rust-lang.org/std/macro.dbg.html</a></p></div></div></div><div class="field "><a name="debug_assert_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#debug_assert_"><span class="identifier">debug_assert_</span></a> (<span style="white-space:nowrap">expr:<span class="type">Bool</span>,</span> <span style="white-space:nowrap">extra:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Ensure that a boolean expression is <code>true</code> at runtime. Optionally provide a
 second parameter to use for a custom exception message</p>
-<p>Unlike <code>assert</code>, <code>debug_assert</code> statements are only enabled if the Haxe compiler
-is invoked with the <code>-debug</code> flag. This makes <code>debug_assert</code> useful for checks
+<p>Unlike <code>assert_</code>, <code>debug_assert_</code> statements are only enabled if the Haxe compiler
+is invoked with the <code>-debug</code> flag. This makes <code>debug_assert_</code> useful for checks
 that are too expensive to be present in a release build but may be helpful
 during development.</p>
-<pre><code class="prettyprint haxe">assert(true);
+<pre><code class="prettyprint haxe">assert_(true);
 
 function some_computation(): Bool { return true; }
-assert(some_computation());
+assert_(some_computation());
 
-// assert with a custom message
+// assert_ with a custom message
 final x: Bool = true;
-assert(x, "x wasn't true!");
+assert_(x, "x wasn't true!");
 
 final a = 3; final b = 27;
-assert(a + b == 30, 'a = $a, b = $b');</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>if the provided expression cannot be evaluated to true at runtime</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.debug_assert!.html">https://doc.rust-lang.org/1.8.0/std/macro.debug_assert!.html</a></p></div></div></div><div class="field "><a name="debug_assert_eq"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#debug_assert_eq"><span class="identifier">debug_assert_eq</span></a> (<span style="white-space:nowrap">left:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">right:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Asserts that two expressions are equal to each other.</p>
-<p>Unlike <code>assert_eq</code>, <code>debug_assert_eq</code> statements are only enabled if the Haxe compiler
-is invoked with the <code>-debug</code> flag. This makes <code>debug_assert_eq</code> useful for checks
+assert_(a + b == 30, 'a = $a, b = $b');</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>if the provided expression cannot be evaluated to true at runtime</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.debug_assert!.html">https://doc.rust-lang.org/1.8.0/std/macro.debug_assert!.html</a></p></div></div></div><div class="field "><a name="debug_assert_eq_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#debug_assert_eq_"><span class="identifier">debug_assert_eq_</span></a> (<span style="white-space:nowrap">left:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">right:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Asserts that two expressions are equal to each other.</p>
+<p>Unlike <code>assert_eq_</code>, <code>debug_assert_eq_</code> statements are only enabled if the Haxe compiler
+is invoked with the <code>-debug</code> flag. This makes <code>debug_assert_eq_</code> useful for checks
 that are too expensive to be present in a release build but may be helpful
 during development.</p>
 <pre><code class="prettyprint haxe">final a: Int = 3;
 final b: Int = 1 + 2;
-debug_assert_eq(a, b);</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>the values of the expressions if the two are not equal to each other</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html">https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</a></p></div></div></div><div class="field "><a name="env"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#env"><span class="identifier">env</span></a> (<span style="white-space:nowrap">name:<span class="type">Dynamic</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Inspect an environment variable at compile time.</p>
+debug_assert_eq_(a, b);</code></pre><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>String</code></th><td><p>the values of the expressions if the two are not equal to each other</p></td></tr></table><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html">https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</a></p></div></div></div><div class="field "><a name="env_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#env_"><span class="identifier">env_</span></a> (<span style="white-space:nowrap">name:<span class="type">Dynamic</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Inspect an environment variable at compile time.</p>
 <p>This macro will expand to the value of the named environment variable at compile
 time, yielding an expression of type <code>String</code>.</p>
 <p>If the environment variable is not defined, then a compilation error will be
-emitted. To not emit a compile error, use the <code>option_env</code> macro instead.</p>
-<pre><code class="prettyprint haxe">final path: String = env("PATH");
-Sys.println("the $PATH variable at the time of compiling was: " + path);</code></pre></div></div><div class="field "><a name="include_bytes"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#include_bytes"><span class="identifier">include_bytes</span></a> (<span style="white-space:nowrap">path:<span class="type">Dynamic</span></span>):<span class="type">Bytes</span></code></h3><div class="doc"><p>Includes a file as a byte array.</p>
+emitted. To not emit a compile error, use the <code>option_env_</code> macro instead.</p>
+<pre><code class="prettyprint haxe">final path: String = env_("PATH");
+Sys.println("the $PATH variable at the time of compiling was: " + path);</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.env.html">https://doc.rust-lang.org/std/macro.env.html</a></p></div></div></div><div class="field "><a name="eprint_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#eprint_"><span class="identifier">eprint_</span></a> (<span style="white-space:nowrap">format:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">args:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Prints to the standard error.</p>
+<p>Equivalent to the <code>print_</code> macro, except that output goes to <code>Sys.stderr()</code>
+instead of <code>Sys.stdout()</code>. See <code>print_</code> for example usage.</p>
+<p>Use <code>eprint_</code> only for error and progress messaages. Use <code>print_</code> instead
+for the primary output of your program.</p>
+<pre><code class="prettyprint haxe">eprint("Error: Could not complete task")</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.eprint.html">https://doc.rust-lang.org/std/macro.eprint.html</a></p></div></div></div><div class="field "><a name="eprintln_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#eprintln_"><span class="identifier">eprintln_</span></a> (<span style="white-space:nowrap">format:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">args:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Prints to the standard error, with a newline.</p>
+<p>Equivalent to the <code>println_</code> macro, except that output goes to <code>Sys.stderr()</code>
+instead of <code>Sys.stdout()</code>. See <code>println_</code> for example usage.</p>
+<p>Use <code>eprintln_</code> only for error and progress messaages. Use <code>println_</code> instead
+for the primary output of your program.</p>
+<pre><code class="prettyprint haxe">eprintln("Error: Could not complete task")</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.eprintln.html">https://doc.rust-lang.org/std/macro.eprintln.html</a></p></div></div></div><div class="field "><a name="format_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#format_"><span class="identifier">format_</span></a> (<span style="white-space:nowrap">format:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">args:<span class="type">Dynamic</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Creates a <code>String</code> using interpolation of runtime expressions.</p>
+<p>The first argument <code>format_</code> recieves is a format string. This must be a string
+literal. The power of the formatting string is in the <code>{}</code>s contained.</p>
+<p>Additional parameters passed to <code>format_</code> replace the <code>{}</code>s within the formatting
+string in the order given unless named or positional parameters are used, see
+<code>rusteze.fmt</code> for more information.</p>
+<p>A common use for <code>format_</code> is concatenation and interpolation of strings. The
+same convention is using with <code>print_</code> macros, depending on the intended destination
+of the string.</p>
+<p><strong>TODO:</strong> indexed parameters, named parameters</p>
+<pre><code class="prettyprint haxe">format_("test");
+format_("hello {}", "world!");
+format_("x = {}, y = {}", 10, 30);</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.format.html">https://doc.rust-lang.org/std/macro.format.html</a></p></div></div></div><div class="field "><a name="include_bytes_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#include_bytes_"><span class="identifier">include_bytes_</span></a> (<span style="white-space:nowrap">path:<span class="type">Dynamic</span></span>):<span class="type">Bytes</span></code></h3><div class="doc"><p>Includes a file as a byte array.</p>
 <p>This macro will yield an expression of type <code>haxe.io.Bytes</code> which is the contents
-of the filenae specified. THe file is located relative to the current file.</p></div></div><div class="field "><a name="include_str"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#include_str"><span class="identifier">include_str</span></a> (<span style="white-space:nowrap">path:<span class="type">Dynamic</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Includes a utf8-encoded file as a string.</p>
+of the filenae specified. THe file is located relative to the current file.</p><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.include_bytes.html">https://doc.rust-lang.org/std/macro.include_bytes.html</a></p></div></div></div><div class="field "><a name="include_str_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#include_str_"><span class="identifier">include_str_</span></a> (<span style="white-space:nowrap">path:<span class="type">Dynamic</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Includes a utf8-encoded file as a string.</p>
 <p>This macro will yield an expression of type <code>String</code> which is the contents
-of the filename specified. The file is located relative to the current file.</p></div></div><div class="field "><a name="option_env"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#option_env"><span class="identifier">option_env</span></a> (<span style="white-space:nowrap">name:<span class="type">Dynamic</span></span>):<a class="type" title="An Option represents an optional value: every Option is either Some and contains a value, or None, and does not." href="../rusteze/Option.html">Option</a>&lt;<span class="type">String</span>&gt;</code></h3><div class="doc"><p>Optionally inspect an environment variable at compile time.</p>
+of the filename specified. The file is located relative to the current file.</p>
+<p>File: <code>spanish.in</code>:</p>
+<pre><code>adiós</code></pre>
+<p>File: <code>Main.hx</code>:</p>
+<pre><code class="prettyprint haxe">class Main {
+    public static function main() {
+        final my_str = include_str_("spanish.in");
+        assert_eq_(my_str, "adiós");
+        println_("{}", my_str);
+    }
+}</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.include_str.html">https://doc.rust-lang.org/std/macro.include_str.html</a></p></div></div></div><div class="field "><a name="option_env_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#option_env_"><span class="identifier">option_env_</span></a> (<span style="white-space:nowrap">name:<span class="type">Dynamic</span></span>):<a class="type" title="An Option represents an optional value: every Option is either Some and contains a value, or None, and does not." href="../rusteze/Option.html">Option</a>&lt;<span class="type">String</span>&gt;</code></h3><div class="doc"><p>Optionally inspect an environment variable at compile time.</p>
 <p>If the named environment variable is present at compile time, this will expand
 into an expression of type <code><a href="../rusteze/Option.html#Option">Option</a>&lt;String&gt;</code> with a value of <code>Some</code>. If the
 environment variable is not present, then this will expand to <code>None</code>.</p>
 <p>A compile time error is never emitted when using this macro regardless of
 whether the environment variable is present or not.</p>
-<pre><code class="prettyprint haxe">final key: Option&lt;String&gt; = option_env("SECRET_KEY");
-Sys.println("the secret key might be: " + Std.string(key));</code></pre></div></div><div class="field "><a name="println"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#println"><span class="identifier">println</span></a> (<span style="white-space:nowrap">format:<span class="type">String</span>,</span> <span style="white-space:nowrap">args:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p></p></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#000000">This documentation is generated for version 0.1.0</p><p style="color:#000000">&copy; 2020 &nbsp;</p></div></div></footer><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>
+<pre><code class="prettyprint haxe">final key: Option&lt;String&gt; = option_env_("SECRET_KEY");
+Sys.println("the secret key might be: " + Std.string(key));</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.option_env.html">https://doc.rust-lang.org/std/macro.option_env.html</a></p></div></div></div><div class="field "><a name="print_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#print_"><span class="identifier">print_</span></a> (<span style="white-space:nowrap">format:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">args:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Prints to the standard output.</p>
+<p>Equivalent to the <code>println_</code> macro except that a newline is not printed at the
+end of the message.</p>
+<p>Note that stdout is frequently line-buffered by default so it may be necessary
+to use <code>Sys.stdout().flush()</code> to ensure the output is emitted immediately.</p>
+<p>Use <code>print_</code> only for the primary output of your program. Use <code>eprint_</code> instead
+to print error and progress messatges.</p>
+<pre><code class="prettyprint haxe">print_("this ");
+print_("will ");
+print_("be ");
+print_("on ");
+print_("the ");
+print_("same ");
+print_("line ");</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.print.html">https://doc.rust-lang.org/std/macro.print.html</a></p></div></div></div><div class="field "><a name="println_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#println_"><span class="identifier">println_</span></a> (<span style="white-space:nowrap">format:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">args:<span class="type">Dynamic</span></span>):<span class="type">Dynamic</span></code></h3><div class="doc"><p>Prints to the standard output, with a newline.</p>
+<p>On all platforms, the nweline is the LINE FEED character (<code>\n</code> / <code>U+000A</code>)
+alone (no additional CARRIAGE RETURN (<code>\r</code> / <code>U+000D</code>)).</p>
+<p>Use the <code>format+</code> syntax to write data to the standard output.</p>
+<p>Use <code>println+</code> only for the primary output of your program. Use <code>eprintln+</code>
+instead to print error and progress messages.</p>
+<pre><code class="prettyprint haxe">println_(''); // prints just a newline
+println_("hello there!");
+println_("format {} arguments", "some");</code></pre><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.println.html">https://doc.rust-lang.org/std/macro.println.html</a></p></div></div></div><div class="field "><a name="try_"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#try_"><span class="identifier">try_</span></a>&lt;<span class="type">T</span>, <span class="type">E</span>&gt; (<span style="white-space:nowrap">val:<a class="type" title="Result is a type that represents either success (Ok) or failure (Err)." href="../rusteze/Result.html">Result</a>&lt;<span class="type">T</span>, <span class="type">E</span>&gt;</span>):<span class="type">T</span></code></h3><div class="doc"><p>Unwraps a result or propagtes its error.</p>
+<p><code>try_</code> matches the given <code><a href="../rusteze/Result.html#Result">Result</a></code>. In case of the <code>Ok</code> variant, the expression
+has the value of the wrapped value.</p>
+<p>In case of the <code>Err</code> variant, it retrieves the inner error. The resulting error
+is immediately returned.</p>
+<p>Because of the early return, <code>try_</code> can only be used in functions that return
+<code><a href="../rusteze/Result.html#Result">Result</a></code>.</p><p class="javadoc">See:</p><div class="indent inline-content"><p><a href="https://doc.rust-lang.org/std/macro.try.html">https://doc.rust-lang.org/std/macro.try.html</a></p></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#000000">This documentation is generated for version 0.1.0</p><p style="color:#000000">&copy; 2020 &nbsp;</p></div></div></footer><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>

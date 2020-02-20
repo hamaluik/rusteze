@@ -18,6 +18,10 @@ package rusteze;
 
 import haxe.ds.Option;
 
+/**
+ OptionTools are automatic static extensions on the `Option` enum providing numerous
+ convenience functions such as `unwrap`, `is_some`, etc
+**/
 @:nullSafety
 class OptionTools {
     /**

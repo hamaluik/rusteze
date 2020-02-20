@@ -19,6 +19,11 @@ package rusteze.iter;
 #if !cpp
 @:generic
 #end
+/**
+ Base functionality for all `rusteze` iterators. Essentially an abstract base class.
+
+ @see https://doc.rust-lang.org/std/iter/trait.Iterator.html
+**/
 @:keep
 @:nullSafety
 class IterBase<T> {

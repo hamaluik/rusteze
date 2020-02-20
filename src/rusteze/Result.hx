@@ -16,6 +16,11 @@
 
 package rusteze;
 
+/**
+ `Result` is a type that represents either success (`Ok`) or failure (`Err`).
+
+ See `ResultTools` documentation for details.
+**/
 @:nullSafety
 @:generic
 @:using(rusteze.ResultTools)

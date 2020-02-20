@@ -17,12 +17,10 @@
 package rusteze.iter;
 
 /**
- An iterator that maps the values of `iter` with `f`.
+ A basic iterator
 
- This class is created by the `map` method on `Iter`. See its documentation for more.
-
- @see `Iter`
- @see https://doc.rust-lang.org/std/iter/struct.Map.html
+ @see `IterBase`
+ @see https://doc.rust-lang.org/std/iter/index.html#implementing-iterator
 **/
 #if !cpp
 @:generic

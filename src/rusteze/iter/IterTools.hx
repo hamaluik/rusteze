@@ -16,6 +16,9 @@
 
 package rusteze.iter;
 
+/**
+ Static extension used to obtain a `rusteze`.`Iter` from an `Array`
+**/
 @:nullSafety
 class ArrayIterTools {
     @:generic

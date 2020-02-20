@@ -1,6 +1,6 @@
 <!-- This file can be parsed by haxe.rtti.XmlParser -->
 <haxe>
-	<class path="Array" params="T" file="/usr/local/lib/haxe/std/Array.hx" extern="1">
+	<class path="Array" params="T" file="/usr/share/haxe/std/Array.hx" extern="1">
 		<length public="1" set="null">
 			<x path="Int"/>
 			<haxe_doc>The length of `this` Array.</haxe_doc>
@@ -316,7 +316,7 @@
 	@see https://haxe.org/manual/std-Array.html
 	@see https://haxe.org/manual/lf-array-comprehension.html</haxe_doc>
 	</class>
-	<abstract path="Class" params="T" file="/usr/local/lib/haxe/std/Class.hx">
+	<abstract path="Class" params="T" file="/usr/share/haxe/std/Class.hx">
 		<this><x path="Class"><c path="Class.T"/></x></this>
 		<haxe_doc>An abstract type that represents a Class.
 
@@ -328,7 +328,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="Enum" params="T" file="/usr/local/lib/haxe/std/Enum.hx">
+	<abstract path="Enum" params="T" file="/usr/share/haxe/std/Enum.hx">
 		<this><x path="Enum"><c path="Enum.T"/></x></this>
 		<haxe_doc>An abstract type that represents an Enum type.
 
@@ -342,16 +342,16 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="EnumValue" params="" file="/usr/local/lib/haxe/std/EnumValue.hx">
+	<abstract path="EnumValue" params="" file="/usr/share/haxe/std/EnumValue.hx">
 		<this><x path="EnumValue"/></this>
 		<haxe_doc>An abstract type that represents any enum value.
 	See `Type` for the Haxe Reflection API.
 
 	@see https://haxe.org/manual/types-enum-instance.html</haxe_doc>
 		<meta><m n=":coreType"/></meta>
-		<impl><class path="_EnumValue.EnumValue_Impl_" params="" file="/usr/local/lib/haxe/std/EnumValue.hx" private="1" module="EnumValue"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="_EnumValue.EnumValue_Impl_" params="" file="/usr/share/haxe/std/EnumValue.hx" private="1" module="EnumValue"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<class path="Math" params="" file="/usr/local/lib/haxe/std/Math.hx" extern="1">
+	<class path="Math" params="" file="/usr/share/haxe/std/Math.hx" extern="1">
 		<PI public="1" set="null" static="1">
 			<x path="Float"/>
 			<haxe_doc>Represents the ratio of the circumference of a circle to its diameter,
@@ -625,7 +625,7 @@
 
 	@see https://haxe.org/manual/std-math.html</haxe_doc>
 	</class>
-	<class path="Std" params="" file="/usr/local/lib/haxe/std/Std.hx" extern="1">
+	<class path="Std" params="" file="/usr/share/haxe/std/Std.hx" extern="1">
 		<is public="1" set="method" static="1">
 			<f a="v:t">
 				<d/>
@@ -745,14 +745,14 @@
 		<haxe_doc>The Std class provides standard methods for manipulating basic types.</haxe_doc>
 		<meta><m n=":directlyUsed"/></meta>
 	</class>
-	<abstract path="Void" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Void" params="" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<this><x path="Void"/></this>
 		<haxe_doc>The standard `Void` type. Only `null` values can be of the type `Void`.
 
 	@see https://haxe.org/manual/types-void.html</haxe_doc>
 		<meta><m n=":coreType"/></meta>
 	</abstract>
-	<abstract path="Float" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Float" params="" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<this><x path="Float"/></this>
 		<haxe_doc><![CDATA[The standard `Float` type, this is a double-precision IEEE 64bit float.
 
@@ -770,7 +770,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="Int" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Int" params="" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<this><x path="Int"/></this>
 		<to><icast><x path="Float"/></icast></to>
 		<haxe_doc><![CDATA[The standard `Int` type. Its precision depends on the platform.
@@ -790,7 +790,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="Null" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Null" params="T" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<from><icast><c path="Null.T"/></icast></from>
 		<this><x path="Null"><c path="Null.T"/></x></this>
 		<to><icast><c path="Null.T"/></icast></to>
@@ -808,7 +808,7 @@
 			<m n=":coreType"/>
 		</meta>
 	</abstract>
-	<abstract path="Bool" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Bool" params="" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<this><x path="Bool"/></this>
 		<haxe_doc><![CDATA[The standard Boolean type, which can either be `true` or `false`.
 
@@ -823,7 +823,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="Dynamic" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Dynamic" params="T" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<this><x path="Dynamic"><c path="Dynamic.T"/></x></this>
 		<haxe_doc>`Dynamic` is a special type which is compatible with all other types.
 
@@ -837,7 +837,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<typedef path="Iterator" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<typedef path="Iterator" params="T" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<a>
 			<next set="method">
 				<f a=""><c path="Iterator.T"/></f>
@@ -867,21 +867,21 @@
 
 	@see https://haxe.org/manual/lf-iterators.html</haxe_doc>
 	</typedef>
-	<typedef path="Iterable" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<typedef path="Iterable" params="T" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<a><iterator set="method"><f a=""><t path="Iterator"><c path="Iterable.T"/></t></f></iterator></a>
 		<haxe_doc>An `Iterable` is a data structure which has an `iterator()` method.
 	See `Lambda` for generic functions on iterable structures.
 
 	@see https://haxe.org/manual/lf-iterators.html</haxe_doc>
 	</typedef>
-	<typedef path="KeyValueIterator" params="K:V" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<typedef path="KeyValueIterator" params="K:V" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<t path="Iterator"><a>
 	<value><c path="KeyValueIterator.V"/></value>
 	<key><c path="KeyValueIterator.K"/></key>
 </a></t>
 		<haxe_doc>A `KeyValueIterator` is an `Iterator` that has a key and a value.</haxe_doc>
 	</typedef>
-	<typedef path="KeyValueIterable" params="K:V" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
+	<typedef path="KeyValueIterable" params="K:V" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes">
 		<a><keyValueIterator set="method"><f a=""><t path="KeyValueIterator">
 	<c path="KeyValueIterable.K"/>
 	<c path="KeyValueIterable.V"/>
@@ -889,7 +889,7 @@
 		<haxe_doc>A `KeyValueIterable` is a data structure which has a `keyValueIterator()`
 	method to iterate over key-value-pairs.</haxe_doc>
 	</typedef>
-	<class path="ArrayAccess" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes" extern="1" interface="1"><haxe_doc>`ArrayAccess` is used to indicate a class that can be accessed using brackets.
+	<class path="ArrayAccess" params="T" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes" extern="1" interface="1"><haxe_doc>`ArrayAccess` is used to indicate a class that can be accessed using brackets.
 	The type parameter represents the type of the elements stored.
 
 	This interface should be used for externs only. Haxe does not support custom
@@ -897,7 +897,7 @@
 	abstract types.
 
 	@see https://haxe.org/manual/types-abstract-array-access.html</haxe_doc></class>
-	<class path="String" params="" file="/usr/local/lib/haxe/std/String.hx" extern="1">
+	<class path="String" params="" file="/usr/share/haxe/std/String.hx" extern="1">
 		<fromCharCode public="1" set="method" static="1">
 			<f a="code">
 				<x path="Int"/>
@@ -1064,7 +1064,7 @@
 
 	@see https://haxe.org/manual/std-String.html</haxe_doc>
 	</class>
-	<class path="Type" params="" file="/usr/local/lib/haxe/std/Type.hx" extern="1">
+	<class path="Type" params="" file="/usr/share/haxe/std/Type.hx" extern="1">
 		<getClass public="1" params="T" set="method" static="1">
 			<f a="o">
 				<c path="getClass.T"/>
@@ -1371,7 +1371,7 @@
 	@see https://haxe.org/manual/types.html
 	@see https://haxe.org/manual/std-reflection.html</haxe_doc>
 	</class>
-	<class path="haxe.EnumTools" params="" file="/usr/local/lib/haxe/std/haxe/EnumTools.hx" extern="1">
+	<class path="haxe.EnumTools" params="" file="/usr/share/haxe/std/haxe/EnumTools.hx" extern="1">
 		<getName public="1" params="T" get="inline" set="null" line="52" static="1">
 			<f a="e">
 				<x path="Enum"><c path="getName.T"/></x>
@@ -1463,7 +1463,7 @@
 	If the first argument to any of the methods is `null`, the result is
 	unspecified.</haxe_doc>
 	</class>
-	<class path="haxe.EnumValueTools" params="" file="/usr/local/lib/haxe/std/haxe/EnumTools.hx" module="haxe.EnumTools" extern="1">
+	<class path="haxe.EnumValueTools" params="" file="/usr/share/haxe/std/haxe/EnumTools.hx" module="haxe.EnumTools" extern="1">
 		<equals public="1" params="T" get="inline" set="null" line="133" static="1">
 			<f a="a:b">
 				<c path="equals.T"/>
@@ -1522,7 +1522,7 @@
 	If the first argument to any of the methods is `null`, the result is
 	unspecified.</haxe_doc>
 	</class>
-	<abstract path="haxe.Int32" params="" file="/usr/local/lib/haxe/std/haxe/Int32.hx">
+	<abstract path="haxe.Int32" params="" file="/usr/share/haxe/std/haxe/Int32.hx">
 		<from><icast><x path="Int"/></icast></from>
 		<this><x path="Int"/></this>
 		<to>
@@ -1531,9 +1531,9 @@
 		</to>
 		<haxe_doc>Int32 provides a 32-bit integer with consistent overflow behavior across
 	all platforms.</haxe_doc>
-		<impl><class path="haxe._Int32.Int32_Impl_" params="" file="/usr/local/lib/haxe/std/haxe/Int32.hx" private="1" module="haxe.Int32"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe._Int32.Int32_Impl_" params="" file="/usr/share/haxe/std/haxe/Int32.hx" private="1" module="haxe.Int32"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<abstract path="haxe.Int64" params="" file="/usr/local/lib/haxe/std/haxe/Int64.hx">
+	<abstract path="haxe.Int64" params="" file="/usr/share/haxe/std/haxe/Int64.hx">
 		<from>
 			<icast><t path="haxe._Int64.__Int64"/></icast>
 			<icast field="ofInt"><x path="Int"/></icast>
@@ -1542,7 +1542,7 @@
 		<to><icast><t path="haxe._Int64.__Int64"/></icast></to>
 		<haxe_doc>A cross-platform signed 64-bit integer.
 	Int64 instances can be created from two 32-bit words using `Int64.make()`.</haxe_doc>
-		<impl><class path="haxe._Int64.Int64_Impl_" params="" file="/usr/local/lib/haxe/std/haxe/Int64.hx" private="1" module="haxe.Int64">
+		<impl><class path="haxe._Int64.Int64_Impl_" params="" file="/usr/share/haxe/std/haxe/Int64.hx" private="1" module="haxe.Int64">
 	<high public="1" get="accessor" set="null" static="1">
 		<x path="haxe.Int32"/>
 		<meta><m n=":impl"/></meta>
@@ -1554,13 +1554,13 @@
 	<meta><m n=":keep"/></meta>
 </class></impl>
 	</abstract>
-	<typedef path="haxe._Int64.__Int64" params="" file="/usr/local/lib/haxe/std/haxe/Int64.hx" private="1" module="haxe.Int64">
+	<typedef path="haxe._Int64.__Int64" params="" file="/usr/share/haxe/std/haxe/Int64.hx" private="1" module="haxe.Int64">
 		<c path="haxe._Int64.___Int64"/>
 		<haxe_doc>This typedef will fool `@:coreApi` into thinking that we are using
 	the same underlying type, even though it might be different on
 	specific platforms.</haxe_doc>
 	</typedef>
-	<enum path="haxe.ds.Option" params="T" file="/usr/local/lib/haxe/std/haxe/ds/Option.hx">
+	<enum path="haxe.ds.Option" params="T" file="/usr/share/haxe/std/haxe/ds/Option.hx">
 		<Some a="v"><c path="haxe.ds.Option.T"/></Some>
 		<None/>
 		<haxe_doc>An Option is a wrapper type which can either have a value (Some) or not a
@@ -1569,7 +1569,7 @@
 	@see https://haxe.org/manual/std-Option.html</haxe_doc>
 		<meta><m n=":directlyUsed"/></meta>
 	</enum>
-	<abstract path="haxe.ds.ReadOnlyArray" params="T" file="/usr/local/lib/haxe/std/haxe/ds/ReadOnlyArray.hx">
+	<abstract path="haxe.ds.ReadOnlyArray" params="T" file="/usr/share/haxe/std/haxe/ds/ReadOnlyArray.hx">
 		<from><icast><c path="Array"><c path="haxe.ds.ReadOnlyArray.T"/></c></icast></from>
 		<this><c path="Array"><c path="haxe.ds.ReadOnlyArray.T"/></c></this>
 		<haxe_doc>`ReadOnlyArray` is an abstract over an ordinary `Array` which only exposes
@@ -1590,7 +1590,7 @@
 	<e>slice</e>
 	<e>toString</e>
 </m></meta>
-		<impl><class path="haxe.ds._ReadOnlyArray.ReadOnlyArray_Impl_" params="" file="/usr/local/lib/haxe/std/haxe/ds/ReadOnlyArray.hx" private="1" module="haxe.ds.ReadOnlyArray">
+		<impl><class path="haxe.ds._ReadOnlyArray.ReadOnlyArray_Impl_" params="" file="/usr/share/haxe/std/haxe/ds/ReadOnlyArray.hx" private="1" module="haxe.ds.ReadOnlyArray">
 	<length public="1" get="accessor" set="null" static="1">
 		<x path="Int"/>
 		<meta><m n=":impl"/></meta>
@@ -1599,10 +1599,10 @@
 	<meta><m n=":keep"/></meta>
 </class></impl>
 	</abstract>
-	<class path="haxe.io.Bytes" params="" file="/usr/local/lib/haxe/std/haxe/io/Bytes.hx"><meta><m n=":keep"/></meta></class>
-	<typedef path="haxe.io.BytesData" params="" file="/usr/local/lib/haxe/std/haxe/io/BytesData.hx"><c path="Array"><x path="Int"/></c></typedef>
+	<class path="haxe.io.Bytes" params="" file="/usr/share/haxe/std/haxe/io/Bytes.hx"><meta><m n=":keep"/></meta></class>
+	<typedef path="haxe.io.BytesData" params="" file="/usr/share/haxe/std/haxe/io/BytesData.hx"><c path="Array"><x path="Int"/></c></typedef>
 	<class path="rusteze.Macros" params="" file="src/rusteze/Macros.hx">
-		<assert public="1" set="method" static="1">
+		<assert_ public="1" set="method" static="1">
 			<f a="expr:extra">
 				<x path="Bool"/>
 				<d/>
@@ -1612,23 +1612,23 @@
      second parameter to use for a custom exception message
 
      ```haxe
-     assert(true);
+     assert_(true);
 
      function some_computation(): Bool { return true; }
-     assert(some_computation());
+     assert_(some_computation());
 
-     // assert with a custom message
+     // assert_ with a custom message
      final x: Bool = true;
-     assert(x, "x wasn't true!");
+     assert_(x, "x wasn't true!");
 
      final a = 3; final b = 27;
-     assert(a + b == 30, 'a = $a, b = $b');
+     assert_(a + b == 30, 'a = $a, b = $b');
      ```
 
      @throws String if the provided expression cannot be evaluated to true at runtime
      @see https://doc.rust-lang.org/1.8.0/std/macro.assert!.html</haxe_doc>
-		</assert>
-		<debug_assert public="1" set="method" static="1">
+		</assert_>
+		<debug_assert_ public="1" set="method" static="1">
 			<f a="expr:extra">
 				<x path="Bool"/>
 				<d/>
@@ -1637,29 +1637,29 @@
 			<haxe_doc>Ensure that a boolean expression is `true` at runtime. Optionally provide a
      second parameter to use for a custom exception message
 
-     Unlike `assert`, `debug_assert` statements are only enabled if the Haxe compiler
-     is invoked with the `-debug` flag. This makes `debug_assert` useful for checks
+     Unlike `assert_`, `debug_assert_` statements are only enabled if the Haxe compiler
+     is invoked with the `-debug` flag. This makes `debug_assert_` useful for checks
      that are too expensive to be present in a release build but may be helpful
      during development.
 
      ```haxe
-     assert(true);
+     assert_(true);
 
      function some_computation(): Bool { return true; }
-     assert(some_computation());
+     assert_(some_computation());
 
-     // assert with a custom message
+     // assert_ with a custom message
      final x: Bool = true;
-     assert(x, "x wasn't true!");
+     assert_(x, "x wasn't true!");
 
      final a = 3; final b = 27;
-     assert(a + b == 30, 'a = $a, b = $b');
+     assert_(a + b == 30, 'a = $a, b = $b');
      ```
 
      @throws String if the provided expression cannot be evaluated to true at runtime
      @see https://doc.rust-lang.org/1.8.0/std/macro.debug_assert!.html</haxe_doc>
-		</debug_assert>
-		<assert_eq public="1" set="method" static="1">
+		</debug_assert_>
+		<assert_eq_ public="1" set="method" static="1">
 			<f a="left:right">
 				<d/>
 				<d/>
@@ -1670,13 +1670,13 @@
      ```haxe
      final a: Int = 3;
      final b: Int = 1 + 2;
-     assert_eq(a, b);
+     assert_eq_(a, b);
      ```
 
      @throws String the values of the expressions if the two are not equal to each other
      @see https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</haxe_doc>
-		</assert_eq>
-		<debug_assert_eq public="1" set="method" static="1">
+		</assert_eq_>
+		<debug_assert_eq_ public="1" set="method" static="1">
 			<f a="left:right">
 				<d/>
 				<d/>
@@ -1684,21 +1684,21 @@
 			</f>
 			<haxe_doc>Asserts that two expressions are equal to each other.
 
-     Unlike `assert_eq`, `debug_assert_eq` statements are only enabled if the Haxe compiler
-     is invoked with the `-debug` flag. This makes `debug_assert_eq` useful for checks
+     Unlike `assert_eq_`, `debug_assert_eq_` statements are only enabled if the Haxe compiler
+     is invoked with the `-debug` flag. This makes `debug_assert_eq_` useful for checks
      that are too expensive to be present in a release build but may be helpful
      during development.
 
      ```haxe
      final a: Int = 3;
      final b: Int = 1 + 2;
-     debug_assert_eq(a, b);
+     debug_assert_eq_(a, b);
      ```
 
      @throws String the values of the expressions if the two are not equal to each other
      @see https://doc.rust-lang.org/1.8.0/std/macro.assert_eq!.html</haxe_doc>
-		</debug_assert_eq>
-		<env public="1" set="method" static="1">
+		</debug_assert_eq_>
+		<env_ public="1" set="method" static="1">
 			<f a="name">
 				<d/>
 				<c path="String"/>
@@ -1709,14 +1709,16 @@
      time, yielding an expression of type `String`.
 
      If the environment variable is not defined, then a compilation error will be
-     emitted. To not emit a compile error, use the `option_env` macro instead.
+     emitted. To not emit a compile error, use the `option_env_` macro instead.
 
      ```haxe
-     final path: String = env("PATH");
+     final path: String = env_("PATH");
      Sys.println("the $PATH variable at the time of compiling was: " + path);
-     ```</haxe_doc>
-		</env>
-		<option_env public="1" set="method" static="1">
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.env.html</haxe_doc>
+		</env_>
+		<option_env_ public="1" set="method" static="1">
 			<f a="name">
 				<d/>
 				<e path="rusteze.Option"><c path="String"/></e>
@@ -1731,11 +1733,13 @@
      whether the environment variable is present or not.
 
      ```haxe
-     final key: Option<String> = option_env("SECRET_KEY");
+     final key: Option<String> = option_env_("SECRET_KEY");
      Sys.println("the secret key might be: " + Std.string(key));
-     ```]]></haxe_doc>
-		</option_env>
-		<include_str public="1" set="method" static="1">
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.option_env.html]]></haxe_doc>
+		</option_env_>
+		<include_str_ public="1" set="method" static="1">
 			<f a="path">
 				<d/>
 				<c path="String"/>
@@ -1743,9 +1747,29 @@
 			<haxe_doc>Includes a utf8-encoded file as a string.
 
      This macro will yield an expression of type `String` which is the contents
-     of the filename specified. The file is located relative to the current file.</haxe_doc>
-		</include_str>
-		<include_bytes public="1" set="method" static="1">
+     of the filename specified. The file is located relative to the current file.
+
+     File: `spanish.in`:
+
+     ```
+     adiós
+     ```
+
+     File: `Main.hx`:
+
+     ```haxe
+     class Main {
+         public static function main() {
+             final my_str = include_str_("spanish.in");
+             assert_eq_(my_str, "adiós");
+             println_("{}", my_str);
+         }
+     }
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.include_str.html</haxe_doc>
+		</include_str_>
+		<include_bytes_ public="1" set="method" static="1">
 			<f a="path">
 				<d/>
 				<c path="haxe.io.Bytes"/>
@@ -1753,9 +1777,11 @@
 			<haxe_doc>Includes a file as a byte array.
      
      This macro will yield an expression of type `haxe.io.Bytes` which is the contents
-     of the filenae specified. THe file is located relative to the current file.</haxe_doc>
-		</include_bytes>
-		<concat public="1" set="method" static="1">
+     of the filenae specified. THe file is located relative to the current file.
+
+     @see https://doc.rust-lang.org/std/macro.include_bytes.html</haxe_doc>
+		</include_bytes_>
+		<concat_ public="1" set="method" static="1">
 			<f a="e1:rest">
 				<d/>
 				<d/>
@@ -1766,20 +1792,187 @@
      This macro takes any number of comma-separated literals, yielding an expression
      of `String` which represents all of the literals concatenated left-to-right.
 
-     Integer and floating point literals are stringified in order to be concatenated.</haxe_doc>
-		</concat>
-		<println public="1" set="method" static="1"><f a="format:args">
-	<c path="String"/>
-	<d/>
-	<d/>
-</f></println>
+     Integer and floating point literals are stringified in order to be concatenated.
+
+     ```haxe
+     final s: String = concat_("test", 10, 'b', true);
+     assert_eq_(s, "test10btrue");
+     ```
+     
+     @see https://doc.rust-lang.org/std/macro.concat.html</haxe_doc>
+		</concat_>
+		<format_ public="1" set="method" static="1">
+			<f a="format:args">
+				<d/>
+				<d/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Creates a `String` using interpolation of runtime expressions.
+
+     The first argument `format_` recieves is a format string. This must be a string
+     literal. The power of the formatting string is in the `{}`s contained.
+
+     Additional parameters passed to `format_` replace the `{}`s within the formatting
+     string in the order given unless named or positional parameters are used, see
+     `rusteze.fmt` for more information.
+
+     A common use for `format_` is concatenation and interpolation of strings. The
+     same convention is using with `print_` macros, depending on the intended destination
+     of the string.
+
+     **TODO:** indexed parameters, named parameters
+     
+     ```haxe
+     format_("test");
+     format_("hello {}", "world!");
+     format_("x = {}, y = {}", 10, 30);
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.format.html</haxe_doc>
+		</format_>
+		<print_ public="1" set="method" static="1">
+			<f a="format:args">
+				<d/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Prints to the standard output.
+
+     Equivalent to the `println_` macro except that a newline is not printed at the
+     end of the message.
+
+     Note that stdout is frequently line-buffered by default so it may be necessary
+     to use `Sys.stdout().flush()` to ensure the output is emitted immediately.
+
+     Use `print_` only for the primary output of your program. Use `eprint_` instead
+     to print error and progress messatges.
+     
+     ```haxe
+     print_("this ");
+     print_("will ");
+     print_("be ");
+     print_("on ");
+     print_("the ");
+     print_("same ");
+     print_("line ");
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.print.html</haxe_doc>
+		</print_>
+		<println_ public="1" set="method" static="1">
+			<f a="format:args">
+				<d/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Prints to the standard output, with a newline.
+
+     On all platforms, the nweline is the LINE FEED character (`\n` / `U+000A`)
+     alone (no additional CARRIAGE RETURN (`\r` / `U+000D`)).
+
+     Use the `format+` syntax to write data to the standard output.
+
+     Use `println+` only for the primary output of your program. Use `eprintln+`
+     instead to print error and progress messages.
+
+     ```haxe
+     println_(''); // prints just a newline
+     println_("hello there!");
+     println_("format {} arguments", "some");
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.println.html</haxe_doc>
+		</println_>
+		<eprint_ public="1" set="method" static="1">
+			<f a="format:args">
+				<d/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Prints to the standard error.
+
+     Equivalent to the `print_` macro, except that output goes to `Sys.stderr()`
+     instead of `Sys.stdout()`. See `print_` for example usage.
+
+     Use `eprint_` only for error and progress messaages. Use `print_` instead
+     for the primary output of your program.
+
+     ```haxe
+     eprint("Error: Could not complete task")
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.eprint.html</haxe_doc>
+		</eprint_>
+		<eprintln_ public="1" set="method" static="1">
+			<f a="format:args">
+				<d/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>Prints to the standard error, with a newline.
+
+     Equivalent to the `println_` macro, except that output goes to `Sys.stderr()`
+     instead of `Sys.stdout()`. See `println_` for example usage.
+
+     Use `eprintln_` only for error and progress messaages. Use `println_` instead
+     for the primary output of your program.
+
+     ```haxe
+     eprintln("Error: Could not complete task")
+     ```
+
+     @see https://doc.rust-lang.org/std/macro.eprintln.html</haxe_doc>
+		</eprintln_>
+		<dbg_ public="1" set="method" static="1">
+			<f a="val:rest">
+				<d/>
+				<d/>
+				<d/>
+			</f>
+			<haxe_doc>This macro prints the value of each argument to `stderr` along with the source
+     location of the macro invocation as well as the source code of the expression.
+
+     The `dbg_` macro works exactly the same in release builds. This is useful when
+     debugging issues that only occur in release builds or when debugging in release
+     mode is significantly faster.
+
+     Note that this macro is intended as debugging tool and therefore you should
+     avoid having uses of it in version control for longer periods. Use cases involving
+     debug output that should be added to version control are better served by
+     proper logging utilities.
+
+     @see https://doc.rust-lang.org/std/macro.dbg.html</haxe_doc>
+		</dbg_>
+		<try_ public="1" params="T:E" set="method" static="1">
+			<f a="val">
+				<e path="rusteze.Result">
+					<c path="try_.T"/>
+					<c path="try_.E"/>
+				</e>
+				<c path="try_.T"/>
+			</f>
+			<haxe_doc>Unwraps a result or propagtes its error.
+
+     `try_` matches the given `Result`. In case of the `Ok` variant, the expression
+     has the value of the wrapped value.
+
+     In case of the `Err` variant, it retrieves the inner error. The resulting error
+     is immediately returned.
+
+     Because of the early return, `try_` can only be used in functions that return
+     `Result`.
+
+     @see https://doc.rust-lang.org/std/macro.try.html</haxe_doc>
+		</try_>
 		<haxe_doc>Haxe re-implementations of various Rust macros</haxe_doc>
 	</class>
 	<enum path="rusteze.Option" params="T" file="src/rusteze/Option.hx">
 		<Some a="v"><c path="rusteze.Option.T"/></Some>
 		<None/>
 		<haxe_doc>An `Option` represents an optional value: every `Option` is either `Some` and
- contains a value, or `None`, and does not.</haxe_doc>
+ contains a value, or `None`, and does not. 
+
+ See `OptionTools` documentation for details.</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"/>
@@ -1788,7 +1981,7 @@
 		</meta>
 	</enum>
 	<class path="rusteze.OptionTools" params="" file="src/rusteze/OptionTools.hx">
-		<into_std public="1" params="T" get="inline" set="null" line="29" static="1">
+		<into_std public="1" params="T" get="inline" set="null" line="33" static="1">
 			<f a="self">
 				<e path="haxe.ds.Option"><c path="into_std.T"/></e>
 				<e path="haxe.ds.Option"><c path="into_std.T"/></e>
@@ -1798,7 +1991,7 @@
      @param self 
      @return Bool]]></haxe_doc>
 		</into_std>
-		<from_std public="1" params="T" get="inline" set="null" line="42" static="1">
+		<from_std public="1" params="T" get="inline" set="null" line="46" static="1">
 			<f a="self">
 				<e path="haxe.ds.Option"><c path="from_std.T"/></e>
 				<e path="haxe.ds.Option"><c path="from_std.T"/></e>
@@ -1808,7 +2001,7 @@
      @param self 
      @return Bool]]></haxe_doc>
 		</from_std>
-		<into public="1" params="T" get="inline" set="null" line="56" static="1">
+		<into public="1" params="T" get="inline" set="null" line="60" static="1">
 			<f a="self">
 				<e path="haxe.ds.Option"><c path="into.T"/></e>
 				<x path="Null"><c path="into.T"/></x>
@@ -1819,7 +2012,7 @@
      @param self 
      @return Bool]]></haxe_doc>
 		</into>
-		<from public="1" params="T" get="inline" set="null" line="70" static="1">
+		<from public="1" params="T" get="inline" set="null" line="74" static="1">
 			<f a="self">
 				<x path="Null"><c path="from.T"/></x>
 				<e path="haxe.ds.Option"><c path="from.T"/></e>
@@ -1830,7 +2023,7 @@
      @param self 
      @return Bool]]></haxe_doc>
 		</from>
-		<is_some public="1" params="T" get="inline" set="null" line="82" static="1">
+		<is_some public="1" params="T" get="inline" set="null" line="86" static="1">
 			<f a="self">
 				<e path="haxe.ds.Option"><c path="is_some.T"/></e>
 				<x path="Bool"/>
@@ -1839,7 +2032,7 @@
 			<haxe_doc>Returns `true` if the option is a `Some` value
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.is_some</haxe_doc>
 		</is_some>
-		<is_none public="1" params="T" get="inline" set="null" line="95" static="1">
+		<is_none public="1" params="T" get="inline" set="null" line="99" static="1">
 			<f a="self">
 				<e path="haxe.ds.Option"><c path="is_none.T"/></e>
 				<x path="Bool"/>
@@ -1849,7 +2042,7 @@
 
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.is_none</haxe_doc>
 		</is_none>
-		<contains public="1" params="T" get="inline" set="null" line="108" static="1">
+		<contains public="1" params="T" get="inline" set="null" line="112" static="1">
 			<f a="self:x">
 				<e path="haxe.ds.Option"><c path="contains.T"/></e>
 				<c path="contains.T"/>
@@ -1860,7 +2053,7 @@
 
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.contains</haxe_doc>
 		</contains>
-		<expect public="1" params="T" get="inline" set="null" line="122" static="1">
+		<expect public="1" params="T" get="inline" set="null" line="126" static="1">
 			<f a="self:msg">
 				<e path="haxe.ds.Option"><c path="expect.T"/></e>
 				<c path="String"/>
@@ -1872,7 +2065,7 @@
 
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.expect</haxe_doc>
 		</expect>
-		<unwrap public="1" params="T" get="inline" set="null" line="137" static="1">
+		<unwrap public="1" params="T" get="inline" set="null" line="141" static="1">
 			<f a="self">
 				<e path="haxe.ds.Option"><c path="unwrap.T"/></e>
 				<c path="unwrap.T"/>
@@ -1884,7 +2077,7 @@
 
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap]]></haxe_doc>
 		</unwrap>
-		<unwrap_or public="1" params="T" get="inline" set="null" line="152" static="1">
+		<unwrap_or public="1" params="T" get="inline" set="null" line="156" static="1">
 			<f a="self:def">
 				<e path="haxe.ds.Option"><c path="unwrap_or.T"/></e>
 				<c path="unwrap_or.T"/>
@@ -1897,7 +2090,7 @@
 
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or</haxe_doc>
 		</unwrap_or>
-		<unwrap_or_else public="1" params="T" get="inline" set="null" line="165" static="1">
+		<unwrap_or_else public="1" params="T" get="inline" set="null" line="169" static="1">
 			<f a="self:def">
 				<e path="haxe.ds.Option"><c path="unwrap_or_else.T"/></e>
 				<f a=""><c path="unwrap_or_else.T"/></f>
@@ -1908,7 +2101,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or_else</haxe_doc>
 		</unwrap_or_else>
-		<map public="1" params="I:O" get="inline" set="null" line="178" static="1">
+		<map public="1" params="I:O" get="inline" set="null" line="182" static="1">
 			<f a="self:f">
 				<e path="haxe.ds.Option"><c path="map.I"/></e>
 				<f a="">
@@ -1922,7 +2115,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.map]]></haxe_doc>
 		</map>
-		<map_or public="1" params="I:O" get="inline" set="null" line="192" static="1">
+		<map_or public="1" params="I:O" get="inline" set="null" line="196" static="1">
 			<f a="self:f:def">
 				<e path="haxe.ds.Option"><c path="map_or.I"/></e>
 				<f a="">
@@ -1938,7 +2131,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.map_or</haxe_doc>
 		</map_or>
-		<map_or_else public="1" params="I:O" get="inline" set="null" line="206" static="1">
+		<map_or_else public="1" params="I:O" get="inline" set="null" line="210" static="1">
 			<f a="self:f:def">
 				<e path="haxe.ds.Option"><c path="map_or_else.I"/></e>
 				<f a="">
@@ -1954,7 +2147,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.map_or_else</haxe_doc>
 		</map_or_else>
-		<ok_or public="1" params="T:E" get="inline" set="null" line="224" static="1">
+		<ok_or public="1" params="T:E" get="inline" set="null" line="228" static="1">
 			<f a="self:err">
 				<e path="haxe.ds.Option"><c path="ok_or.T"/></e>
 				<c path="ok_or.E"/>
@@ -1973,7 +2166,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or]]></haxe_doc>
 		</ok_or>
-		<ok_or_else public="1" params="T:E" get="inline" set="null" line="238" static="1">
+		<ok_or_else public="1" params="T:E" get="inline" set="null" line="242" static="1">
 			<f a="self:err">
 				<e path="haxe.ds.Option"><c path="ok_or_else.T"/></e>
 				<f a=""><c path="ok_or_else.E"/></f>
@@ -1988,7 +2181,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or_else]]></haxe_doc>
 		</ok_or_else>
-		<and public="1" params="T:U" get="inline" set="null" line="251" static="1">
+		<and public="1" params="T:U" get="inline" set="null" line="255" static="1">
 			<f a="self:optb">
 				<e path="haxe.ds.Option"><c path="and.T"/></e>
 				<e path="haxe.ds.Option"><c path="and.U"/></e>
@@ -1999,7 +2192,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.and</haxe_doc>
 		</and>
-		<and_then public="1" params="T:U" get="inline" set="null" line="267" static="1">
+		<and_then public="1" params="T:U" get="inline" set="null" line="271" static="1">
 			<f a="self:f">
 				<e path="haxe.ds.Option"><c path="and_then.T"/></e>
 				<f a="value">
@@ -2016,7 +2209,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then</haxe_doc>
 		</and_then>
-		<filter public="1" params="T" get="inline" set="null" line="288" static="1">
+		<filter public="1" params="T" get="inline" set="null" line="292" static="1">
 			<f a="self:predicate">
 				<e path="haxe.ds.Option"><c path="filter.T"/></e>
 				<f a="value">
@@ -2038,7 +2231,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.filter]]></haxe_doc>
 		</filter>
-		<or public="1" params="T" get="inline" set="null" line="304" static="1">
+		<or public="1" params="T" get="inline" set="null" line="308" static="1">
 			<f a="self:optb">
 				<e path="haxe.ds.Option"><c path="or.T"/></e>
 				<e path="haxe.ds.Option"><c path="or.T"/></e>
@@ -2052,7 +2245,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.or</haxe_doc>
 		</or>
-		<or_else public="1" params="T" get="inline" set="null" line="318" static="1">
+		<or_else public="1" params="T" get="inline" set="null" line="322" static="1">
 			<f a="self:f">
 				<e path="haxe.ds.Option"><c path="or_else.T"/></e>
 				<f a=""><e path="haxe.ds.Option"><c path="or_else.T"/></e></f>
@@ -2064,7 +2257,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.or_else</haxe_doc>
 		</or_else>
-		<xor public="1" params="T" get="inline" set="null" line="332" static="1">
+		<xor public="1" params="T" get="inline" set="null" line="336" static="1">
 			<f a="self:optb">
 				<e path="haxe.ds.Option"><c path="xor.T"/></e>
 				<e path="haxe.ds.Option"><c path="xor.T"/></e>
@@ -2076,7 +2269,7 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.xor</haxe_doc>
 		</xor>
-		<take params="T" get="inline" set="null" line="346" static="1">
+		<take params="T" get="inline" set="null" line="350" static="1">
 			<f a="self">
 				<e path="haxe.ds.Option"><c path="take.T"/></e>
 				<e path="haxe.ds.Option"><c path="take.T"/></e>
@@ -2086,11 +2279,16 @@
      
      @see https://doc.rust-lang.org/std/option/enum.Option.html#method.take</haxe_doc>
 		</take>
+		<haxe_doc>OptionTools are automatic static extensions on the `Option` enum providing numerous
+ convenience functions such as `unwrap`, `is_some`, etc</haxe_doc>
 		<meta><m n=":nullSafety"/></meta>
 	</class>
 	<enum path="rusteze.Result" params="T:E" file="src/rusteze/Result.hx">
 		<Ok a="v"><c path="rusteze.Result.T"/></Ok>
 		<Err a="e"><c path="rusteze.Result.E"/></Err>
+		<haxe_doc>`Result` is a type that represents either success (`Ok`) or failure (`Err`).
+
+ See `ResultTools` documentation for details.</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"/>
@@ -2099,7 +2297,7 @@
 		</meta>
 	</enum>
 	<class path="rusteze.ResultTools" params="" file="src/rusteze/ResultTools.hx">
-		<is_ok public="1" params="T:E" get="inline" set="null" line="35" static="1">
+		<is_ok public="1" params="T:E" get="inline" set="null" line="40" static="1">
 			<f a="self">
 				<e path="rusteze.Result">
 					<c path="is_ok.T"/>
@@ -2112,15 +2310,15 @@
 
      ```haxe
      final x: Result<Int, String> = Ok(-3);
-     assert_eq(x.is_ok(), true);
+     assert_eq_(x.is_ok(), true);
 
      final x: Result<Int, String> = Err("Some error message");
-     assert_eq(x.is_ok(), false);
+     assert_eq_(x.is_ok(), false);
      ```
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok]]></haxe_doc>
 		</is_ok>
-		<is_err public="1" params="T:E" get="inline" set="null" line="48" static="1">
+		<is_err public="1" params="T:E" get="inline" set="null" line="53" static="1">
 			<f a="self">
 				<e path="rusteze.Result">
 					<c path="is_err.T"/>
@@ -2133,7 +2331,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.is_err</haxe_doc>
 		</is_err>
-		<contains public="1" params="T:E" get="inline" set="null" line="61" static="1">
+		<contains public="1" params="T:E" get="inline" set="null" line="66" static="1">
 			<f a="self:x">
 				<e path="rusteze.Result">
 					<c path="contains.T"/>
@@ -2147,7 +2345,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.contains</haxe_doc>
 		</contains>
-		<contains_err public="1" params="T:E" get="inline" set="null" line="74" static="1">
+		<contains_err public="1" params="T:E" get="inline" set="null" line="79" static="1">
 			<f a="self:e">
 				<e path="rusteze.Result">
 					<c path="contains_err.T"/>
@@ -2161,7 +2359,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.contains_err</haxe_doc>
 		</contains_err>
-		<ok public="1" params="T:E" get="inline" set="null" line="90" static="1">
+		<ok public="1" params="T:E" get="inline" set="null" line="95" static="1">
 			<f a="self">
 				<e path="rusteze.Result">
 					<c path="ok.T"/>
@@ -2177,7 +2375,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.ok]]></haxe_doc>
 		</ok>
-		<err public="1" params="T:E" get="inline" set="null" line="106" static="1">
+		<err public="1" params="T:E" get="inline" set="null" line="111" static="1">
 			<f a="self">
 				<e path="rusteze.Result">
 					<c path="err.T"/>
@@ -2193,7 +2391,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.ok]]></haxe_doc>
 		</err>
-		<map public="1" params="T:E:U" get="inline" set="null" line="122" static="1">
+		<map public="1" params="T:E:U" get="inline" set="null" line="127" static="1">
 			<f a="self:op">
 				<e path="rusteze.Result">
 					<c path="map.T"/>
@@ -2216,7 +2414,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map]]></haxe_doc>
 		</map>
-		<map_or public="1" params="T:E:U" get="inline" set="null" line="136" static="1">
+		<map_or public="1" params="T:E:U" get="inline" set="null" line="141" static="1">
 			<f a="self:def:f">
 				<e path="rusteze.Result">
 					<c path="map_or.T"/>
@@ -2235,7 +2433,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or</haxe_doc>
 		</map_or>
-		<map_or_else public="1" params="T:E:U" get="inline" set="null" line="153" static="1">
+		<map_or_else public="1" params="T:E:U" get="inline" set="null" line="158" static="1">
 			<f a="self:def:f">
 				<e path="rusteze.Result">
 					<c path="map_or_else.T"/>
@@ -2260,7 +2458,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or_else]]></haxe_doc>
 		</map_or_else>
-		<map_err public="1" params="T:E:F" get="inline" set="null" line="170" static="1">
+		<map_err public="1" params="T:E:F" get="inline" set="null" line="175" static="1">
 			<f a="self:op">
 				<e path="rusteze.Result">
 					<c path="map_err.T"/>
@@ -2284,7 +2482,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err]]></haxe_doc>
 		</map_err>
-		<and public="1" params="T:E:U" get="inline" set="null" line="183" static="1">
+		<and public="1" params="T:E:U" get="inline" set="null" line="188" static="1">
 			<f a="self:res">
 				<e path="rusteze.Result">
 					<c path="and.T"/>
@@ -2304,7 +2502,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.and</haxe_doc>
 		</and>
-		<and_then public="1" params="T:E:U" get="inline" set="null" line="198" static="1">
+		<and_then public="1" params="T:E:U" get="inline" set="null" line="203" static="1">
 			<f a="self:op">
 				<e path="rusteze.Result">
 					<c path="and_then.T"/>
@@ -2329,7 +2527,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.and_then</haxe_doc>
 		</and_then>
-		<or public="1" params="T:E:F" get="inline" set="null" line="214" static="1">
+		<or public="1" params="T:E:F" get="inline" set="null" line="219" static="1">
 			<f a="self:res">
 				<e path="rusteze.Result">
 					<c path="or.T"/>
@@ -2352,7 +2550,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.or</haxe_doc>
 		</or>
-		<or_else public="1" params="T:E:F" get="inline" set="null" line="229" static="1">
+		<or_else public="1" params="T:E:F" get="inline" set="null" line="234" static="1">
 			<f a="self:op">
 				<e path="rusteze.Result">
 					<c path="or_else.T"/>
@@ -2377,7 +2575,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.or_else</haxe_doc>
 		</or_else>
-		<unwrap_or public="1" params="T:E" get="inline" set="null" line="246" static="1">
+		<unwrap_or public="1" params="T:E" get="inline" set="null" line="251" static="1">
 			<f a="self:optb">
 				<e path="rusteze.Result">
 					<c path="unwrap_or.T"/>
@@ -2395,7 +2593,7 @@
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or</haxe_doc>
 		</unwrap_or>
-		<unwrap_or_else public="1" params="T:E" get="inline" set="null" line="266" static="1">
+		<unwrap_or_else public="1" params="T:E" get="inline" set="null" line="271" static="1">
 			<f a="self:op">
 				<e path="rusteze.Result">
 					<c path="unwrap_or_else.T"/>
@@ -2413,13 +2611,13 @@
 
      ```haxe
      function count(x: String): Int { return x.length }
-     assert_eq(Ok(2).unwrap_or_else(count), 2);
-     assert_eq(Err("foo").unwrap_or_else(count), 3);
+     assert_eq_(Ok(2).unwrap_or_else(count), 2);
+     assert_eq_(Err("foo").unwrap_or_else(count), 3);
      ```
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else</haxe_doc>
 		</unwrap_or_else>
-		<unwrap public="1" params="V:E" get="inline" set="null" line="290" static="1">
+		<unwrap public="1" params="V:E" get="inline" set="null" line="295" static="1">
 			<f a="self">
 				<e path="rusteze.Result">
 					<c path="unwrap.V"/>
@@ -2432,7 +2630,7 @@
 
      ```haxe
      final x: Result<Int, String> = Ok(2);
-     assert_eq(x.unwrap(), 2);
+     assert_eq_(x.unwrap(), 2);
      ```
 
      ```haxe
@@ -2443,7 +2641,7 @@
      @throws String if the value is an `Err`, with a panic message provided by the `Err`'s value.
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap]]></haxe_doc>
 		</unwrap>
-		<expect public="1" params="V:E" get="inline" set="null" line="309" static="1">
+		<expect public="1" params="V:E" get="inline" set="null" line="314" static="1">
 			<f a="self:msg">
 				<e path="rusteze.Result">
 					<c path="expect.V"/>
@@ -2463,7 +2661,7 @@
      @throws String if the value is an `Err`, with a panic message including the passed message, and the content of the `Err`.
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.expect]]></haxe_doc>
 		</expect>
-		<unwrap_err public="1" params="T:E" get="inline" set="null" line="333" static="1">
+		<unwrap_err public="1" params="T:E" get="inline" set="null" line="338" static="1">
 			<f a="self">
 				<e path="rusteze.Result">
 					<c path="unwrap_err.T"/>
@@ -2481,13 +2679,13 @@
 
      ```haxe
      final x: Result<Int, String> = Err("emergency failure");
-     assert_eq(x.unwrap_err(), "emergency failure");
+     assert_eq_(x.unwrap_err(), "emergency failure");
      ```
 
      @throws String if the value is an `Ok`, with a panic message provided by the `Ok`'s value.
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_err]]></haxe_doc>
 		</unwrap_err>
-		<expect_err public="1" params="V:E" get="inline" set="null" line="352" static="1">
+		<expect_err public="1" params="V:E" get="inline" set="null" line="357" static="1">
 			<f a="self:msg">
 				<e path="rusteze.Result">
 					<c path="expect_err.V"/>
@@ -2507,7 +2705,7 @@
      @throws String if the value is an `Err`, with a panic message including the passed message, and the content of the `Err`.
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.expect]]></haxe_doc>
 		</expect_err>
-		<transpose public="1" params="T:E" get="inline" set="null" line="374" static="1">
+		<transpose public="1" params="T:E" get="inline" set="null" line="379" static="1">
 			<f a="self">
 				<e path="rusteze.Result">
 					<e path="rusteze.Option"><c path="transpose.T"/></e>
@@ -2527,16 +2725,18 @@
      ```haxe
      final x: Result<Option<Int>, String> = Ok(Some(5));
      final y: Option<Result<Int, String>> = Some(Ok(5));
-     assert_eq(x.transpose(), y);
+     assert_eq_(x.transpose(), y);
      ```
 
      @see https://doc.rust-lang.org/std/result/enum.Result.html#method.transpose]]></haxe_doc>
 		</transpose>
+		<haxe_doc>ResultTools are automatic static extensions on the `Result` enum providing numerous
+ convenience functions such as `unwrap`, `is_ok`, etc</haxe_doc>
 		<meta><m n=":nullSafety"/></meta>
 	</class>
 	<class path="rusteze.iter.IterBase" params="T" file="src/rusteze/iter/IterBase.hx">
 		<iter final="1"><t path="Iterator"><c path="rusteze.iter.IterBase.T"/></t></iter>
-		<size_hint public="1" set="method" line="40">
+		<size_hint public="1" set="method" line="45">
 			<f a=""><a>
 	<min><x path="Int"/></min>
 	<max><e path="rusteze.Option"><x path="Int"/></e></max>
@@ -2545,12 +2745,12 @@
 
      @see https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.size_hint</haxe_doc>
 		</size_hint>
-		<last public="1" set="method" line="48">
+		<last public="1" set="method" line="53">
 			<f a=""><e path="rusteze.Option"><c path="rusteze.iter.IterBase.T"/></e></f>
 			<haxe_doc><![CDATA[Consumes the iterator, returning the last element
      @return Option<T>]]></haxe_doc>
 		</last>
-		<count public="1" set="method" line="61">
+		<count public="1" set="method" line="66">
 			<f a=""><x path="Int"/></f>
 			<haxe_doc>Consumes the iterator, counting the number of iterations and returning it.
 
@@ -2560,7 +2760,7 @@
      
      @see https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.count</haxe_doc>
 		</count>
-		<map public="1" params="U" set="method" line="85">
+		<map public="1" params="U" set="method" line="90">
 			<f a="f">
 				<f a="item">
 					<c path="rusteze.iter.IterBase.T"/>
@@ -2590,7 +2790,7 @@
      
      @see https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.map</haxe_doc>
 		</map>
-		<fold public="1" params="U" set="method" line="112">
+		<fold public="1" params="U" set="method" line="117">
 			<f a="init:f">
 				<c path="fold.U"/>
 				<f a="accumulator:element">
@@ -2622,7 +2822,7 @@
      
      @see https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.fold</haxe_doc>
 		</fold>
-		<new public="1" set="method" line="31">
+		<new public="1" set="method" line="36">
 			<f a="iter">
 				<t path="Iterator"><c path="rusteze.iter.IterBase.T"/></t>
 				<x path="Void"/>
@@ -2638,18 +2838,16 @@
 	</class>
 	<class path="rusteze.iter.Iter" params="T" file="src/rusteze/iter/Iter.hx">
 		<extends path="rusteze.iter.IterBase"><c path="rusteze.iter.Iter.T"/></extends>
-		<hasNext public="1" get="inline" set="null" line="37"><f a=""><x path="Bool"/></f></hasNext>
-		<next public="1" get="inline" set="null" line="41"><f a=""><c path="rusteze.iter.Iter.T"/></f></next>
-		<new public="1" set="method" line="33"><f a="iter">
+		<hasNext public="1" get="inline" set="null" line="35"><f a=""><x path="Bool"/></f></hasNext>
+		<next public="1" get="inline" set="null" line="39"><f a=""><c path="rusteze.iter.Iter.T"/></f></next>
+		<new public="1" set="method" line="31"><f a="iter">
 	<t path="Iterator"><c path="rusteze.iter.Iter.T"/></t>
 	<x path="Void"/>
 </f></new>
-		<haxe_doc>An iterator that maps the values of `iter` with `f`.
+		<haxe_doc>A basic iterator
 
- This class is created by the `map` method on `Iter`. See its documentation for more.
-
- @see `Iter`
- @see https://doc.rust-lang.org/std/iter/struct.Map.html</haxe_doc>
+ @see `IterBase`
+ @see https://doc.rust-lang.org/std/iter/index.html#implementing-iterator</haxe_doc>
 		<meta>
 			<m n=":generic"/>
 			<m n=":keep"/>
