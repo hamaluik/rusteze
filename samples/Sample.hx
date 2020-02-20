@@ -41,10 +41,19 @@ class Sample {
         try { assert(theAnswer == 42, "the life, the universe, everything"); }
         catch(s: String) { Sys.println(s); }
 
+        // printing
+        println("a = {}", 42);
+
         // utility macros
         final compileTimePathVar: String = env("PATH");
         Sys.println("PATH at compile-time was: " + compileTimePathVar);
+        final ab: String = concat("a", "b");
+        assert_eq(ab, "ab");
+
+        // macros to include strings inline and bytes as resources
         final importContents: String = include_str("import.hx");
         Sys.println("the contents of `import.hx` are:\n" + importContents);
+        final samplesHxmlBytes: haxe.io.Bytes = include_bytes("../samples.hxml");
+        Sys.println('the sample.hxml file has ${samplesHxmlBytes.length} bytes');
     }
 }

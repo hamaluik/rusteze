@@ -173,4 +173,61 @@ class Macros {
         final contents: String = sys.io.File.getContent(path);
         return macro @:pos(Context.currentPos()) '$contents';
     }
+
+    /**
+     Includes a file as a byte array.
+     
+     This macro will yield an expression of type `haxe.io.Bytes` which is the contents
+     of the filenae specified. THe file is located relative to the current file.
+     **/
+    macro public static function include_bytes(path: String): ExprOf<haxe.io.Bytes> {
+        final currentFile: String = Context.getPosInfos(Context.currentPos()).file;
+        final currentFile: haxe.io.Path = new haxe.io.Path(currentFile);
+        final dir: Null<String> = currentFile.dir;
+        final path = dir == null ? haxe.io.Path.join([Sys.getCwd(), path]) : haxe.io.Path.join([Sys.getCwd(), dir, path]);
+        if(!sys.FileSystem.exists(path)) Context.error('couldn\'t read `$path`: No such file', Context.currentPos());
+        if(!Context.getResources().exists(path)) {
+            final bytes: haxe.io.Bytes = sys.io.File.getBytes(path);
+            Context.addResource(path, bytes);
+        }
+        return macro @:pos(Context.currentPos()) haxe.Resource.getBytes($v{path});
+    }
+
+    /**
+     Concatenates literals into a static `String`
+     
+     This macro takes any number of comma-separated literals, yielding an expression
+     of `String` which represents all of the literals concatenated left-to-right.
+
+     Integer and floating point literals are stringified in order to be concatenated.
+     **/
+    macro public static function concat(e1: Expr, rest: Array<Expr>): ExprOf<String> {
+        var s: String = [e1].concat(rest).map((e) -> Std.string(e.getValue())).join("");
+        return macro @:pos(Context.currentPos()) '$s';
+    }
+
+    macro public static function println(format: ExprOf<String>, args: Array<Expr>): Expr {
+        var s: String = format.getValue() + "\n";
+        // TODO: figure out how to emit a format string which is a concatenation
+        // of the args
+        //for(i in 0...args.length) {
+        //    var index: Int = s.indexOf("{}");
+        //    if(index == -1) {
+        //        Context.error('argument `${args[i].toString()}` never used', args[i].pos);
+        //    }
+        //    s = s.substring(0, index)
+        //}
+        return macro @:pos(Context.currentPos()) {
+            #if sys
+            Sys.stdout().writeString($v{s});
+            Sys.stdout().flush();
+            #elseif hxnodejs
+            Sys.stdout().writeString($v{s});
+            #elseif js
+            js.html.Console.log($v{s});
+            #else
+            trace($v{s});
+            #end
+        };
+    }
 }

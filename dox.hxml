@@ -1,5 +1,4 @@
 -cp src
--lib glm
 
 rusteze.Option
 rusteze.Result
