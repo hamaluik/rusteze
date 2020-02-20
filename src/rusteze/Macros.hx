@@ -510,4 +510,40 @@ class Macros {
             case rusteze.Result.Err(e): return Err(e);
         };
     }
+
+    /**
+     Indicates unfinished code.
+
+     This can be useful if you are prototyping and are just looking to have your
+     code typecheck.
+
+     This is similar to `unimplemented_` but allows you to use a custom message.
+     
+     @throws String the `message` along with the file and location the message was generated
+
+     @see https://doc.rust-lang.org/std/macro.todo.html
+    **/
+    macro public static function todo_(message: ExprOf<String>): Expr {
+        var loc = Context.currentPos().toLocation();
+        var locString: String = '[${loc.file.toString()}:${loc.range.start.line}]';
+        return macro @:pos(Context.currentPos()) throw '$locString: ' + ${message};
+    }
+
+    /**
+     Indicates unfinished code.
+
+     This can be useful if you are prototyping and are just looking to have your
+     code typecheck.
+
+     This is similar to `todo_` but uses the standard message "unimplemented"
+     
+     @throws String "unimplemented" along with the file and location the message was generated
+
+     @see https://doc.rust-lang.org/std/macro.unimplemented.html
+    **/
+    macro public static function unimplemented_(): Expr {
+        var loc = Context.currentPos().toLocation();
+        var locString: String = '[${loc.file.toString()}:${loc.range.start.line}]';
+        return macro @:pos(Context.currentPos()) throw '$locString: unimplemented!';
+    }
 }

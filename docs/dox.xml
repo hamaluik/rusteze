@@ -1964,6 +1964,35 @@
 
      @see https://doc.rust-lang.org/std/macro.try.html</haxe_doc>
 		</try_>
+		<todo_ public="1" set="method" static="1">
+			<f a="message">
+				<c path="String"/>
+				<d/>
+			</f>
+			<haxe_doc>Indicates unfinished code.
+
+     This can be useful if you are prototyping and are just looking to have your
+     code typecheck.
+
+     This is similar to `unimplemented_` but allows you to use a custom message.
+     
+     @throws String the `message` along with the file and location the message was generated
+
+     @see https://doc.rust-lang.org/std/macro.todo.html</haxe_doc>
+		</todo_>
+		<unimplemented_ public="1" set="method" static="1">
+			<f a=""><d/></f>
+			<haxe_doc>Indicates unfinished code.
+
+     This can be useful if you are prototyping and are just looking to have your
+     code typecheck.
+
+     This is similar to `todo_` but uses the standard message "unimplemented"
+     
+     @throws String "unimplemented" along with the file and location the message was generated
+
+     @see https://doc.rust-lang.org/std/macro.unimplemented.html</haxe_doc>
+		</unimplemented_>
 		<haxe_doc>Haxe re-implementations of various Rust macros</haxe_doc>
 	</class>
 	<enum path="rusteze.Option" params="T" file="src/rusteze/Option.hx">

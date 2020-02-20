@@ -66,5 +66,7 @@ class Sample {
         Sys.println("the contents of `import.hx` are:\n" + importContents);
         final samplesHxmlBytes: haxe.io.Bytes = include_bytes_("../samples.hxml");
         Sys.println('the sample.hxml file has ${samplesHxmlBytes.length} bytes');
+
+        todo_("call my agent");
     }
 }
